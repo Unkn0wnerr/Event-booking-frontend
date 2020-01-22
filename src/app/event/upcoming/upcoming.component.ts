@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from 'src/app/rest.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-upcoming',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpcomingComponent implements OnInit {
 
-  constructor() { }
+  events:any=[];
+
+  constructor(public rest:RestService, private route:ActivatedRoute) { }
 
   ngOnInit() {
+
+    this.rest.getPastEvent(this.route.snapshot.params['gamename']).subscribe((data: {}) => {
+      console.log(data);
+      this.events=data;
+    })
   }
 
 }

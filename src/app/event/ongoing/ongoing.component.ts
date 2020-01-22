@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from 'src/app/rest.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-ongoing',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OngoingComponent implements OnInit {
 
-  constructor() { }
+  events:any=[];
 
-  ngOnInit() {
+  constructor(public rest:RestService, private route:ActivatedRoute) { }
+
+    ngOnInit() {
+    this.rest.getOngoingEvent(this.route.snapshot.params['gamename']).subscribe((data: {}) => {
+      console.log(data);
+      this.events=data;
+    })
   }
 
 }
