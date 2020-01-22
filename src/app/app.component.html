@@ -18,22 +18,46 @@
     </div>
     
     
+    
 
-    <button type="button" class="btn btn-info" (click)='showV()'>
+    <button type="button" class="btn btn-info btn-lg" (click)='showData()'>
         <a style="color: black;" routerLink="userlogin">UserLogin</a> 
+<<<<<<< Updated upstream
       </button> | 
       <button type="button" class="btn btn-success" (click)='showV()' >
         <a style="color: black;" routerLink="user">User</a> 
       </button>
  | <button type="button" class="btn btn-danger" (click)='showV()'>
     <a style="color: black;" routerLink="app">Home</a> 
+=======
+      </button> 
+     
+ | <button type="button" class="btn btn-danger btn-lg" (click)='showV()'>
+    <a style="color: black;" routerLink="">Home</a> 
+>>>>>>> Stashed changes
   </button> | 
-  <button type="button" class="btn btn-primary" (click)='showV()'>
+  <button type="button" class="btn btn-primary btn-lg" (click)='showData()'>
     <a style="color: black;" routerLink="live">Live</a> 
   </button>
+  |
 
+<<<<<<< Updated upstream
 
 <router-outlet></router-outlet>
+=======
+  <button type="button" class="btn btn-warning btn-lg" (click)='showData()'>
+    <nav>
+      <a routerLink="/event" routerLinkActive="active">event</a>
+    </nav>
+    </button>|
+    <button type="button" class="btn btn-primary btn-lg" (click)='showData()'>
+      <a style="color: black;" routerLink="register">SignUp</a> 
+    </button>
+
+    <div *ngIf='home'>
+         <router-outlet></router-outlet>
+</div>
+>>>>>>> Stashed changes
 
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
 import { user } from '../../user';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,9 +13,9 @@ export class UserloginComponent implements OnInit {
 
   loggedIn:boolean;
   logindetails:user=new user();
-  validUser: boolean=false;
+  validUser: user=new user;
 
-  constructor(private loginservice:UserService) { }
+  constructor(private loginservice:UserService,private router:Router) { }
 
   ngOnInit() {
     this.loginservice.currentLoginState.subscribe(result=>this.loggedIn=result);
@@ -24,11 +25,16 @@ export class UserloginComponent implements OnInit {
 
 
   userLogin(){
+
     this.loginservice.authenticate(this.logindetails).
-    subscribe(data=>this.validUser=data as boolean);
-    if(this.validUser==true)
+    subscribe(data=>this.validUser=data as user);
+    if(this.validUser.name!=null)
     {
-     this.loginservice.changecurrentLoginState(this.validUser);
+
+     this.loginservice.changecurrentLoginState(true);
+     this.loggedIn=!this.loggedIn;
+     this.router.navigate(["user"]);
+
     }
   
   
