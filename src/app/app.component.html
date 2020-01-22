@@ -1,8 +1,45 @@
 
-<button type="button" class="btn btn-secondary btn-lg">
-<nav>
-  <a routerLink="/event" routerLinkActive="active">event</a>
-</nav>
-</button>
 
+
+<div *ngIf='vdata' class="container-fluid">
+    <!-- <div class="gt-section gt-section-4 gt-main-page-hero-section gt-dark-bg-section animate">  -->
+        
+       <!-- <div class="gt-section-bg-video"> -->
+             <video id="video" autoplay="" playsinline="" muted="" loop="true" style="width: 101%; height: 100%;">
+                        <source type="video/mp4"  src="https://www.intelextrememasters.com/season-14/katowice/wp-content/uploads/2019/08/Katowice_2020_Final_Trailer-2048px-no-sound-1-16sec.mp4">
+                            
+                        </video>
+                  
+    <!--<div class="overlay">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcScrY5lPERloWaWsGaF1tAPV4eUWQ0S_F4XrjGB_OD7BehUBIn9" alt="logo" style="max-height: 100px;">
+        <h1 class="elementor-heading-title elementor-size-default">HOME OF ESPORTS</h1>
+    </div>-->
+     
+    </div>
+    
+    
+
+    <button type="button" class="btn btn-info" (click)='showV()'>
+        <a style="color: black;" routerLink="userlogin">UserLogin</a> 
+      </button> | 
+      <button type="button" class="btn btn-success" (click)='showV()' >
+        <a style="color: black;" routerLink="user">User</a> 
+      </button>
+ | <button type="button" class="btn btn-danger" (click)='showV()'>
+    <a style="color: black;" routerLink="app">Home</a> 
+  </button> | 
+  <button type="button" class="btn btn-primary" (click)='showV()'>
+    <a style="color: black;" routerLink="live">Live</a> 
+  </button>
+
+  <button type="button" class="btn btn-secondary btn-lg">
+    <nav>
+      <a routerLink="/event" routerLinkActive="active">event</a>
+    </nav>
+    </button>
 <router-outlet></router-outlet>
+
+
+
+
+

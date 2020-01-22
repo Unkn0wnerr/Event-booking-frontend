@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Event-booking-frontend';
+vdata:boolean=true;
+
+
+  showV(){
+  this.vdata=!this.vdata;
+  }
+
+
 }

@@ -2,12 +2,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EventComponent } from './event/event.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AppComponent } from './app.component';
+
 import { AllComponent } from './event/all/all.component';
 import { OngoingComponent } from './event/ongoing/ongoing.component';
 import { PastComponent } from './event/past/past.component';
 import { UpcomingComponent } from './event/upcoming/upcoming.component';
 import { MatchesComponent } from './matches/matches.component';
+import { Route } from '@angular/router';
+import { UserComponent } from './user/user/user.component';
+import { UserloginComponent } from './user/user/userlogin/userlogin.component';
+import { AppComponent } from './app.component';
+import { LiveComponent } from './live/live.component';
+import { DotaComponent } from './live/dota/dota.component';
+import { CsGoComponent } from './live/cs-go/cs-go.component';
 
 import { AllMatchesComponent } from './matches/all-matches/all-matches.component';
 import { OngoingMatchesComponent } from './matches/ongoing-matches/ongoing-matches.component';
@@ -29,6 +36,22 @@ const routes: Routes = [
   {path: 'matches/:gamename/upcoming', component: UpcomingMatchesComponent},
   {path: 'matches/:gamename/past', component: PastMatchesComponent}
   //{path: "**", component: PageNotFoundComponent} 
+];
+const route: Route[] = [
+
+{path:'user',component:UserComponent},
+{path:'userlogin',component:UserloginComponent},
+{path:'app-root',component:AppComponent},
+{path:'live',component:LiveComponent,
+children:[
+  {path:'dota',component:DotaComponent},
+{path:'cs-go',component:CsGoComponent}
+  
+]
+},
+
+
+
 ];
 
 @NgModule({
