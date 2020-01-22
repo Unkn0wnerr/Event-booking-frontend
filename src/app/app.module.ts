@@ -42,11 +42,8 @@ import { UserService } from './user/user.service';
     PastMatchesComponent,
     UserComponent,
     UserloginComponent,
-   
     LiveComponent,
-   
     DotaComponent,
-   
     CsGoComponent
   ],
   imports: [
@@ -54,12 +51,6 @@ import { UserService } from './user/user.service';
     AppRoutingModule,
     HttpClientModule,
     FormsModule
-
-
-
-
-
- 
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

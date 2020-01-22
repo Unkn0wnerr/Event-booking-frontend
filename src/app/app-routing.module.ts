@@ -24,7 +24,7 @@ import { PastMatchesComponent } from './matches/past-matches/past-matches.compon
 
 const routes: Routes = [
   //{path: '', redirectTo: '/app', pathMatch: 'full'},
-  //{path: 'app', component: AppComponent},
+  //{path: '', component: AppComponent},
   {path: 'event', component: EventComponent},
   {path: 'event/:gamename', component: AllComponent},
   {path: 'event/:gamename/ongoing', component: OngoingComponent},
@@ -34,14 +34,11 @@ const routes: Routes = [
   {path: 'matches/:gamename', component: AllMatchesComponent},
   {path: 'matches/:gamename/ongoing', component: OngoingMatchesComponent},
   {path: 'matches/:gamename/upcoming', component: UpcomingMatchesComponent},
-  {path: 'matches/:gamename/past', component: PastMatchesComponent}
-  //{path: "**", component: PageNotFoundComponent} 
-];
-const route: Route[] = [
+  {path: 'matches/:gamename/past', component: PastMatchesComponent},
 
-{path:'user',component:UserComponent},
+  {path:'user',component:UserComponent},
 {path:'userlogin',component:UserloginComponent},
-{path:'app-root',component:AppComponent},
+
 {path:'live',component:LiveComponent,
 children:[
   {path:'dota',component:DotaComponent},
@@ -49,10 +46,24 @@ children:[
   
 ]
 },
-
-
-
+  //{path: "**", component: PageNotFoundComponent} 
 ];
+//const routes: Route[] = [
+
+//{path:'user',component:UserComponent},
+//{path:'userlogin',component:UserloginComponent},
+//{path:'app-root',component:AppComponent},
+//{path:'live',component:LiveComponent,
+//children:[
+  //{path:'dota',component:DotaComponent},
+//{path:'cs-go',component:CsGoComponent}
+  
+//]
+//},
+
+
+
+//];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
