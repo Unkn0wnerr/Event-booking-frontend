@@ -1,0 +1,46 @@
+<p>user works!</p>
+
+
+
+<div *ngIf="dataShow">
+   <button (click)='getAllList()'>All User Details</button>
+
+</div>
+
+
+<div *ngIf="dataShow">
+      <label>User Id</label>
+      <input [(ngModel)]="userdetails.userId" placeholder="userId">
+      <label>{{userdetails.userId}}</label>
+  <button class="button is-small btn-primary" (click)='getdetailsUser()'>User of userId {{userdetails.userId}}</button>
+</div>
+
+<p>User Details show:</p>
+
+<div *ngIf="!dataShow">
+
+   
+    <div *ngFor="let users of g">
+      <table border="1px" > 
+        <tr><td><span>{{users.name}}</span> </td>
+            <td><span>{{users.nickName}}</span></td>
+                <td><span>{{users.age}}</span></td>
+                    <td> <span>{{users.country}}</span></td>
+                        <td>  <span>{{users.age}}</span></td>
+                            <td> <span>{{users.role}}</span></td>
+                                <td> <span>{{users.gender}}</span> </td>
+                                    <td><span>{{users.birthDate}}</span></td>
+                                        <td><span>{{users.userEmail}}</span></td>
+                                            <td><a href="#">Remove</a>|</td>
+                                                <td> <a href="#">Edit</a ></td>
+
+</tr>                                                </table> 
+        
+        </div>
+
+</div>
+
+
+
+
+

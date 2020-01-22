@@ -1,0 +1,24 @@
+<p>userlogin works!</p>
+
+
+
+<div *ngIf="!loggedIn">
+    <div>
+     <label>User Email</label> 
+     <input [(ngModel)]="logindetails.userEmail" placeholder="userEmail"/>
+     <label>{{ logindetails.userEmail }}</label> 
+   </div>
+   <div>
+     <label>Password</label>
+     <input [(ngModel)]="logindetails.password" placeholder="password"/>{{ logindetails.password }}
+   </div>  
+ <button  class="button is-small btn-primary" (click)='userLogin()'>Login</button>
+
+
+</div>
+<div *ngIf="loggedIn">
+<label>Hi {{ logindetails.userEmail }} </label>
+</div>
+
+
+
