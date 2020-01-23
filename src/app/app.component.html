@@ -20,44 +20,32 @@
     
     
 
-    <button type="button" class="btn btn-info btn-lg" (click)='showData()'>
+    <button type="button" class="btn btn-lg btn-pill btn-primary" (click)='showData()'>
         <a style="color: black;" routerLink="userlogin">UserLogin</a> 
-<<<<<<< Updated upstream
-      </button> | 
-      <button type="button" class="btn btn-success" (click)='showV()' >
-        <a style="color: black;" routerLink="user">User</a> 
-      </button>
- | <button type="button" class="btn btn-danger" (click)='showV()'>
-    <a style="color: black;" routerLink="app">Home</a> 
-=======
       </button> 
      
- | <button type="button" class="btn btn-danger btn-lg" (click)='showV()'>
-    <a style="color: black;" routerLink="">Home</a> 
->>>>>>> Stashed changes
+ | <button type="button" class="btn btn-lg btn-pill btn-info" (click)='showV()'>
+    <a style="color: black;" routerLink="app">Home</a> 
   </button> | 
-  <button type="button" class="btn btn-primary btn-lg" (click)='showData()'>
+  <button type="button" class="btn btn-lg btn-pill btn-danger" (click)='showData()'>
     <a style="color: black;" routerLink="live">Live</a> 
   </button>
-  |
-
-<<<<<<< Updated upstream
-
-<router-outlet></router-outlet>
-=======
-  <button type="button" class="btn btn-warning btn-lg" (click)='showData()'>
+  |<button type="button" class="btn btn-lg btn-pill btn-warning" (click)='showData()'>
     <nav>
-      <a routerLink="/event" routerLinkActive="active">event</a>
+      <a style="color: black;" routerLink="/event" routerLinkActive="active">event</a>
     </nav>
     </button>|
-    <button type="button" class="btn btn-primary btn-lg" (click)='showData()'>
+    <button type="button" class="btn btn-lg btn-pill btn-success" (click)='showData()'>
       <a style="color: black;" routerLink="register">SignUp</a> 
+    </button>|
+    <button type="button" class="btn btn-lg btn-pill btn-warning" (click)='showData()'>
+      <a style="color: black;" routerLink="ticket">Ticket</a> 
     </button>
 
     <div *ngIf='home'>
          <router-outlet></router-outlet>
-</div>
->>>>>>> Stashed changes
+    </div>
+
 
 
 

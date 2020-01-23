@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-orgregister',
+  selector: 'orgregister',
   templateUrl: './orgregister.component.html',
   styleUrls: ['./orgregister.component.css']
 })

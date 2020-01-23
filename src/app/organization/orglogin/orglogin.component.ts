@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-orglogin',
+  selector: 'orglogin',
   templateUrl: './orglogin.component.html',
   styleUrls: ['./orglogin.component.css']
 })
