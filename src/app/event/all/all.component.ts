@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 export class AllComponent implements OnInit {
 
   events:any=[];
+  src:boolean=false;
+  src2:boolean=false;
 
   constructor(public rest:RestService, private route:ActivatedRoute) { }
 
@@ -18,6 +20,23 @@ export class AllComponent implements OnInit {
       console.log(data);
       this.events=data;
     })
+    this.getGameName();
+    
+  }
+
+  getGameName():void{
+    if(this.events.gameName=="CSGO")
+    {
+      this.src=!this.src;
+    }
+    
+    if(this.events.gameName=="DOTA")
+    {
+      this.src2=!this.src2;
+    }
+  
+    
+  
   }
 
   

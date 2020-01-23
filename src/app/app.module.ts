@@ -31,6 +31,8 @@ import { RegisterComponent } from './user/register/register.component';
 import { OrganizationComponent } from './organization/organization/organization.component';
 import { OrgloginComponent } from './organization/orglogin/orglogin.component';
 import { OrgregisterComponent } from './organization/orgregister/orgregister.component';
+import { EventPageComponent } from './event/event-page/event-page.component';
+
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { OrgregisterComponent } from './organization/orgregister/orgregister.com
     RegisterComponent,
     OrganizationComponent,
     OrgloginComponent,
-    OrgregisterComponent
+    OrgregisterComponent,
+    EventPageComponent,
+    
 
   ],
   imports: [

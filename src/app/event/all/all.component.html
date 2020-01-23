@@ -17,13 +17,35 @@
 </nav>
 </button>
 
-<div>
+<!--<div>
     <ul>
         <li *ngFor="let e of events">
             <p>{{ e.eventName }}</p>
         </li>
     </ul>
+</div>-->
+
+
+<div *ngFor="let e of events">
+<div class="card" style="width: 18rem;">
+<div *ngIf="src">
+    <img class="card-img-top" src="https://esportbetweb.com/wp-content/uploads/2019/07/csgo-moreorange2.png" alt="Card image cap">
+</div>   
+<div *ngIf="src2">
+    <img class="card-img-top" src="https://www.pngkey.com/png/detail/128-1280651_dota-2-png-logo-dota-2-logo-png.png" alt="Card image cap">
 </div>
-
-
-
+<div class="card-body">
+      <h3 class="card-title">{{e.eventName}}</h3>
+      <p class="card-text">{{e.startDate}} - {{e.endDate}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{e.gameName}}</li>
+      <li class="list-group-item">{{e.prizePool}}</li>
+      <li class="list-group-item">{{e.arena}}</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Show Event Page</a>
+      <a href="#" class="card-link">Book Ticket</a>
+    </div>
+</div>
+</div>

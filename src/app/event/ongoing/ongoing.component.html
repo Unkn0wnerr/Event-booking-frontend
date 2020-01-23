@@ -1,7 +1,18 @@
-<div>
-    <ul>
-        <li *ngFor="let e of events">
-            <p>{{ e.eventName }}</p>
-        </li>
-    </ul>
-</div>
+<div *ngFor="let e of events">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="https://esportbetweb.com/wp-content/uploads/2019/07/csgo-moreorange2.png" alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-title">{{e.eventName}}</h3>
+          <p class="card-text">{{e.startDate}} </p>-<p class="card-text"> {{e.endDate}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{e.gameName}}</li>
+          <li class="list-group-item">{{prizePool}}</li>
+          <li class="list-group-item">{{e.arena}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Show Event Page</a>
+          <a href="#" class="card-link">Book Ticket</a>
+        </div>
+    </div>
+    </div>
