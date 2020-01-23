@@ -23,8 +23,15 @@ import { DotaComponent } from './live/dota/dota.component';
 import { CsGoComponent } from './live/cs-go/cs-go.component';
 
 
+
+
 import { UserComponent } from './user/user/user.component';
 import { UserService } from './user/user.service';
+import { RegisterComponent } from './user/register/register.component';
+import { OrganizationComponent } from './organization/organization/organization.component';
+import { OrgloginComponent } from './organization/orglogin/orglogin.component';
+import { OrgregisterComponent } from './organization/orgregister/orgregister.component';
+
 
 @NgModule({
   declarations: [
@@ -44,7 +51,12 @@ import { UserService } from './user/user.service';
     UserloginComponent,
     LiveComponent,
     DotaComponent,
-    CsGoComponent
+    CsGoComponent,
+    RegisterComponent,
+    OrganizationComponent,
+    OrgloginComponent,
+    OrgregisterComponent
+
   ],
   imports: [
     BrowserModule,

@@ -16,10 +16,13 @@ import { LiveComponent } from './live/live.component';
 import { DotaComponent } from './live/dota/dota.component';
 import { CsGoComponent } from './live/cs-go/cs-go.component';
 
+
 import { AllMatchesComponent } from './matches/all-matches/all-matches.component';
 import { OngoingMatchesComponent } from './matches/ongoing-matches/ongoing-matches.component';
 import { UpcomingMatchesComponent } from './matches/upcoming-matches/upcoming-matches.component';
 import { PastMatchesComponent } from './matches/past-matches/past-matches.component';
+import { RegisterComponent } from './user/register/register.component';
+
 
 
 const routes: Routes = [
@@ -36,7 +39,12 @@ const routes: Routes = [
   {path: 'matches/:gamename/upcoming', component: UpcomingMatchesComponent},
   {path: 'matches/:gamename/past', component: PastMatchesComponent},
 
+
   {path:'user',component:UserComponent},
+
+  
+  {path:'register',component:RegisterComponent},
+
 {path:'userlogin',component:UserloginComponent},
 
 {path:'live',component:LiveComponent,

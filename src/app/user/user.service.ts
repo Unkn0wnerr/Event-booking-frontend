@@ -38,6 +38,9 @@ changecurrentLoginState(state:boolean)
   this.loggedIn.next(state);
 }
 
-
+registerUser(user)
+{
+  return this.http.post<any>(this.baseUrl+"/register",user);
+}
 
 }
