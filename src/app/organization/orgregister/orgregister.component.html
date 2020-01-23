@@ -11,47 +11,24 @@
         <!-- form card login -->
         <div style="background-color: cyan; opacity: inherit;" class="card rounded-0">
           <div class="card-header">
-            <h3 class="mb-0">User Register</h3>
+            <h3 class="mb-0">Organization Register</h3>
           </div>
           <div style="background-color:lime;" class="card-body">
             <form class="form">
               <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" [(ngModel)]="registerUserData.name" name="name" class="form-control rounded-0" required>
+                <label for="name">Organization Name</label>
+                <input type="text" [(ngModel)]="registerUserData.orgName" name="orgName" class="form-control rounded-0" required>
               </div>
-              <div class="form-group">
-                <label for="nickName">NickName</label>
-                <input type="text" [(ngModel)]="registerUserData.nickName" name="nickName" class="form-control rounded-0" required>
+                           <div class="form-group">
+                <label for="orgEmail">Email</label>
+                <input type="text" [(ngModel)]="registerUserData.orgEmail" name="orgEmail" class="form-control rounded-0" required>
               </div>
-              <div class="form-group">
-                <label for="userEmail">Email</label>
-                <input type="text" [(ngModel)]="registerUserData.userEmail" name="userEmail" class="form-control rounded-0" required>
-              </div>
-              <div class="form-group">
-                <label for="role">Role</label>
-                <input type="text" [(ngModel)]="registerUserData.role" name="country" class="form-control rounded-0" required>
-              </div>
-              <div class="form-group">
-                <label for="country">Country</label>
-                <input type="text" [(ngModel)]="registerUserData.country" name="country" class="form-control rounded-0" required>
-              </div>
-              <div class="form-group">
-                <label for="gender">Gender</label>
-                <input type="text" [(ngModel)]="registerUserData.gender" name="gender" class="form-control rounded-0" required>
-              </div>
-              <div class="form-group">
-                <label for="age">Age</label>
-                <input type="number" [(ngModel)]="registerUserData.age" name="age" class="form-control rounded-0" required>
-              </div>
-              <div class="form-group">
-                <label for="birthDate">BirthDate</label>
-                <input type="date" [(ngModel)]="registerUserData.birthDate" name="birthDate" class="form-control rounded-0" required>
-              </div>
-              <div class="form-group">
+             <div class="form-group">
                 <label>password</label>
-                <input type="password" [(ngModel)]="registerUserData.password" name="password" class="form-control rounded-0"  required>
+                <input type="password" [(ngModel)]="registerUserData.orgPassword" name="orgPassword" class="form-control rounded-0"  required>
               </div>
-              <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+              
+              <button type="button" (click)="registerOrg()" class="btn btn-primary float-right">Register</button>
             </form>
           </div>
           <!--/card-block-->

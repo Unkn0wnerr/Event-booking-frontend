@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { user } from './user';
+import { organization } from '../organization/organization';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { user } from './user';
 })
 export class UserService {
 private baseUrl='http://localhost:7070/EventBooking/user';
-
+private baseorgUrl='http://localhost:7070/EventBooking/org';
 
 private loggedIn= new BehaviorSubject<boolean>(false);
 currentLoginState=this.loggedIn.asObservable();
@@ -41,6 +42,16 @@ changecurrentLoginState(state:boolean)
 registerUser(user)
 {
   return this.http.post<any>(this.baseUrl+"/register",user);
+}
+
+authenticateorg(value:organization):Observable<any>
+{
+  return this.http.get(this.baseorgUrl+"/validate"+"/"+value.orgEmail+"/"+value.orgPassword);
+}
+
+registerOrg(organization: any)
+{
+  return this.http.post<any>(this.baseorgUrl+"/register",organization);
 }
 
 }

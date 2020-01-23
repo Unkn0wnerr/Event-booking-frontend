@@ -13,6 +13,9 @@ import { DotaComponent } from './live/dota/dota.component';
 import { CsGoComponent } from './live/cs-go/cs-go.component';
 import { RegisterComponent } from './user/register/register.component';
 import { TicketComponent } from './ticket/ticket/ticket.component';
+import { SignupComponent } from './signup/signup.component';
+import { OrgloginComponent } from './organization/orglogin/orglogin.component';
+import { OrgregisterComponent } from './organization/orgregister/orgregister.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,13 @@ import { TicketComponent } from './ticket/ticket/ticket.component';
     UserComponent,
     UserloginComponent,
     RegisterComponent,
-   
+    OrgloginComponent,
+    OrgregisterComponent,
     LiveComponent,
-   
-    DotaComponent,
-   
-    CsGoComponent,
-   
-    TicketComponent
+       DotaComponent,
+       CsGoComponent,
+    TicketComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

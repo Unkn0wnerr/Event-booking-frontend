@@ -1,0 +1,27 @@
+<div *ngIf="signup">
+
+<button type="button" class="btn btn-lg btn-pill btn-warning" (click)='showData()'>
+    <a style="color: black;" routerLink="userlogin">User Login</a> 
+  </button> |
+  
+<button type="button" class="btn btn-lg btn-pill btn-success" (click)='showData()'>
+    <a style="color: black;" routerLink="orglogin">Organizor Login</a> 
+  </button>
+  |
+
+  
+<button type="button" class="btn btn-lg btn-pill btn-info" (click)='showData()'>
+    <a style="color: black;" routerLink="register">User Register</a> 
+  </button>|
+
+  
+  <button type="button" class="btn btn-lg btn-pill btn-danger" (click)='showData()'>
+      <a style="color: black;" routerLink="orgregister">Organizor Register</a> 
+    </button>
+</div>
+
+
+    <div *ngIf="!signup">
+
+        <router-outlet></router-outlet>
+    </div>
