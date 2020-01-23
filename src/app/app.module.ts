@@ -28,7 +28,8 @@ import { CsGoComponent } from './live/cs-go/cs-go.component';
 import { UserComponent } from './user/user/user.component';
 import { UserService } from './user/user.service';
 import { RegisterComponent } from './user/register/register.component';
-import { OrganizationComponent } from './organization/organization/organization.component';
+import { TicketComponent } from './ticket/ticket/ticket.component';
+import { SignupComponent } from './signup/signup.component';
 import { OrgloginComponent } from './organization/orglogin/orglogin.component';
 import { OrgregisterComponent } from './organization/orgregister/orgregister.component';
 import { EventPageComponent } from './event/event-page/event-page.component';
@@ -55,12 +56,16 @@ import { EventPageComponent } from './event/event-page/event-page.component';
     DotaComponent,
     CsGoComponent,
     RegisterComponent,
-    OrganizationComponent,
     OrgloginComponent,
     OrgregisterComponent,
     EventPageComponent,
     
 
+    LiveComponent,
+       DotaComponent,
+       CsGoComponent,
+    TicketComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
