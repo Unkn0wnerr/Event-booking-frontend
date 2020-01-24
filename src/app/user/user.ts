@@ -1,4 +1,4 @@
-export class user
+export class User
 {
   public userId: number;
   public name: string;
@@ -11,5 +11,5 @@ export class user
   public country: string;
   public password: string;
   
-
+  public constructor(){};
 }
