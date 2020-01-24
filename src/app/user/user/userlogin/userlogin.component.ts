@@ -18,7 +18,9 @@ export class UserloginComponent implements OnInit {
   constructor(private loginservice:UserService,private router:Router) { }
 
   ngOnInit() {
-    this.loginservice.currentLoginState.subscribe(result=>this.loggedIn=result);
+    this.loginservice.currentLoginState.subscribe((result)=>{
+      return this.loggedIn = result;
+    });
    
   }
 
