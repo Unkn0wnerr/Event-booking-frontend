@@ -43,6 +43,9 @@ export class RestService {
     return this.http.get(endpoint + 'event/' + game + '/past').pipe(map(this.extractData));
   }
 
+  getEventDetails(id):Observable<any>{
+    return this.http.get(endpoint + 'event/eventpage/' + id).pipe(map(this.extractData));
+  }
 
  
 

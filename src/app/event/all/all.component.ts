@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-all',
@@ -13,7 +14,7 @@ export class AllComponent implements OnInit {
   src:boolean=false;
   src2:boolean=false;
 
-  constructor(public rest:RestService, private route:ActivatedRoute) { }
+  constructor(public rest:RestService, private route:ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
     this.rest.getEventbyGame(this.route.snapshot.params['gamename']).subscribe((data: {}) => {
@@ -23,6 +24,11 @@ export class AllComponent implements OnInit {
     this.getGameName();
     
   }
+
+  onSelect(event:any){
+    this.router.navigate(['/event/eventpage', event.eventId])
+}
+
 
   getGameName():void{
     if(this.events.gameName=="CSGO")

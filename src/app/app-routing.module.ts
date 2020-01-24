@@ -22,6 +22,7 @@ import { OngoingMatchesComponent } from './matches/ongoing-matches/ongoing-match
 import { UpcomingMatchesComponent } from './matches/upcoming-matches/upcoming-matches.component';
 import { PastMatchesComponent } from './matches/past-matches/past-matches.component';
 import { RegisterComponent } from './user/register/register.component';
+import { EventPageComponent } from './event/event-page/event-page.component';
 
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path: 'matches/:gamename/ongoing', component: OngoingMatchesComponent},
   {path: 'matches/:gamename/upcoming', component: UpcomingMatchesComponent},
   {path: 'matches/:gamename/past', component: PastMatchesComponent},
+  {path: 'event/eventpage/:id', component: EventPageComponent},
 
 
   {path:'user',component:UserComponent},
@@ -80,4 +82,4 @@ children:[
 export class AppRoutingModule { }
 export const routingComponent = [AppComponent,  PageNotFoundComponent,
   EventComponent, AllComponent,OngoingComponent,PastComponent,UpcomingComponent,
-  MatchesComponent,AllMatchesComponent,UpcomingMatchesComponent,OngoingMatchesComponent,PastMatchesComponent]
+  MatchesComponent,AllMatchesComponent,UpcomingMatchesComponent,OngoingMatchesComponent,PastMatchesComponent,EventPageComponent]
