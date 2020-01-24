@@ -44,8 +44,14 @@
       <li class="list-group-item">{{e.arena}}</li>
     </ul>
     <div class="card-body">
-      <a href="#" class="card-link">Show Event Page</a>
-      <a href="#" class="card-link">Book Ticket</a>
+        <ul>
+            <li (click)="onSelect(e)">
+                
+                <button type="button" class="btn btn-light">Show Event Page</button>
+            </li>
+        </ul>
     </div>
+    
 </div>
 </div>
+
