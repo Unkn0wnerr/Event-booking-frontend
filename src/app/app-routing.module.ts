@@ -23,6 +23,10 @@ import { UpcomingMatchesComponent } from './matches/upcoming-matches/upcoming-ma
 import { PastMatchesComponent } from './matches/past-matches/past-matches.component';
 import { RegisterComponent } from './user/register/register.component';
 import { EventPageComponent } from './event/event-page/event-page.component';
+import { TicketComponent } from './ticket/ticket/ticket.component';
+import { SignupComponent } from './signup/signup.component';
+import { OrgloginComponent } from './organization/orglogin/orglogin.component';
+import { OrgregisterComponent } from './organization/orgregister/orgregister.component';
 
 
 
@@ -49,12 +53,23 @@ const routes: Routes = [
 
 {path:'userlogin',component:UserloginComponent},
 
+{path:'user',component:UserComponent},
+{path:'signup',component:SignupComponent,
+      children:[
+        {path:'userlogin',component:UserloginComponent},
+        {path:'orglogin',component:OrgloginComponent},
+        {path:'register',component:RegisterComponent},
+        {path:'orgregister',component:OrgregisterComponent},
+               ]
+},
+{path:'app-root',component:AppComponent},
+{path:'ticket',component:TicketComponent},
 {path:'live',component:LiveComponent,
-children:[
-  {path:'dota',component:DotaComponent},
-{path:'cs-go',component:CsGoComponent}
+       children:[
+                 {path:'dota',component:DotaComponent},
+                 {path:'cs-go',component:CsGoComponent}
   
-]
+                ]
 },
   //{path: "**", component: PageNotFoundComponent} 
 ];
