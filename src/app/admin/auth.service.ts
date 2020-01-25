@@ -7,7 +7,7 @@ export class AuthService{
     constructor(private router: Router){}
     loginInfo(username, password){
         if(username === "admin" && password == "admin"){
-                this.router.navigate(['signup']);
+                this.router.navigate(['event']);
         }
     }
 }
