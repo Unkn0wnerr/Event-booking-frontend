@@ -1,6 +1,18 @@
 
-<app-header></app-header>
+
 <!-- NAV BAR -->
+<br>
+<br>
+<br>
+
+<nav class ="navbar navbar-expand-md navbar-dark bg-dark">
+   
+  <ul class="navbar-nav">
+    <li><a style="color: lime;" *ngIf="loginService.isOrgLoggedIn()" routerLink="/logout" class="nav-link" >Organizor LogOut</a></li>
+    <li><a style="color: lime;" *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">User LogOut</a></li>
+   
+  </ul>
+</nav> 
 <nav class="navbar navbar-expand-sm fixed-top">
   <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent">
       <span class="navbar-toggler-icon"></span>

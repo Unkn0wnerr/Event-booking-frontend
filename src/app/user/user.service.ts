@@ -4,6 +4,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
 import { User } from './user';
 import { organization } from '../organization/organization';
 import { tap } from 'rxjs/operators';
+import { Event } from '../event/event';
 
 
 @Injectable({
@@ -14,6 +15,8 @@ private baseUrl='http://localhost:7070/EventBooking/user';
 private loginUrl='http://localhost:7070/EventBooking/user/validate';
 private loginorgUrl='http://localhost:7070/EventBooking/org/validate';
 private baseorgUrl='http://localhost:7070/EventBooking/org';
+private eventUrl='http://localhost:7070/EventBooking/event';
+
 
 private loggedIn= new BehaviorSubject<boolean>(false);
 currentLoginState=this.loggedIn.asObservable();
@@ -73,6 +76,11 @@ authenticateorg(value:any):Observable<any>
 changecurrentLoginState(state:boolean)
 {    
   this.loggedIn.next(state);
+}
+
+registerEvent(event:Event)
+{
+  return this.http.post<any>(this.eventUrl+"/register",event);
 }
 
 registerUser(user:User)

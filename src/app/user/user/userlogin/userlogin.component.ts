@@ -32,17 +32,15 @@ export class UserloginComponent implements OnInit {
 
   userLogin(){
 
+    
     this.aa=this.loginservice.authenticate({
       userEmail:this.logindetails.userEmail
       ,password:this.logindetails.password});
     console.log(this.aa);
-    //this.userman=JSON.parse(this.aa);
     console.log(this.aa.name);
     console.log("kk"+this.aa.userEmail);
-
-    sessionStorage.setItem('userEmail',"loggedIN");
+    sessionStorage.setItem('userEmail',"user");
     this.loginservice.changecurrentLoginState(true);
-    //this.loggedIn=!this.loggedIn;
     this.router.navigate(["user"]);    
       
     
