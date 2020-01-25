@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
-import { user } from '../user';
+import { User } from '../user';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +10,7 @@ import { user } from '../user';
 })
 export class RegisterComponent implements OnInit {
 
-  registerUserData:user=new user();
+  registerUserData:User=new User();
 
   constructor(private userregisterService:UserService , private router:Router) { }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user.service';
-import { user } from '../../user';
+import { User } from '../../user';
 import { Router } from '@angular/router';
 
 
@@ -12,8 +12,12 @@ import { Router } from '@angular/router';
 export class UserloginComponent implements OnInit {
 
   loggedIn:boolean;
-  logindetails:user=new user();
-  validUser: user=new user;
+  logindetails:User=new User();
+  validUser:User=new User();
+  userman:User=new User();
+  aa:any;
+
+
 
   constructor(private loginservice:UserService,private router:Router) { }
 
@@ -28,20 +32,20 @@ export class UserloginComponent implements OnInit {
 
   userLogin(){
 
-    this.loginservice.authenticate(this.logindetails).
-    subscribe(data=>this.validUser=data as user);
-    if(this.validUser.name!=null)
-    {
+    this.aa=this.loginservice.authenticate({
+      userEmail:this.logindetails.userEmail
+      ,password:this.logindetails.password});
+    console.log(this.aa);
+    //this.userman=JSON.parse(this.aa);
+    console.log(this.aa.name);
+    console.log("kk"+this.aa.userEmail);
 
-     this.loginservice.changecurrentLoginState(true);
-     this.loggedIn=!this.loggedIn;
-     this.router.navigate(["user"]);
+    sessionStorage.setItem('userEmail',"loggedIN");
+    this.loginservice.changecurrentLoginState(true);
+    //this.loggedIn=!this.loggedIn;
+    this.router.navigate(["user"]);    
+      
+    
 
-    }
-  
-  
-   
    }
-
-
 }

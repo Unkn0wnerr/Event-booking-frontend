@@ -1,5 +1,5 @@
 
-
+<app-header></app-header>
 
 <div *ngIf='vdata' class="container-fluid">
     <!-- <div class="gt-section gt-section-4 gt-main-page-hero-section gt-dark-bg-section animate">  -->
@@ -8,7 +8,7 @@
              <video id="video" autoplay="" playsinline="" muted="" loop="true" style="width: 101%; height: 100%;">
                         <source type="video/mp4"  src="https://www.intelextrememasters.com/season-14/katowice/wp-content/uploads/2019/08/Katowice_2020_Final_Trailer-2048px-no-sound-1-16sec.mp4">
                             
-                        </video>
+              </video>
                   
     <!--<div class="overlay">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcScrY5lPERloWaWsGaF1tAPV4eUWQ0S_F4XrjGB_OD7BehUBIn9" alt="logo" style="max-height: 100px;">
@@ -33,37 +33,44 @@
       </button> 
      -->
  | <button type="button" class="btn btn-lg btn-pill btn-info" (click)='showV()'>
+
+     <!--
+     <nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+        <button class="btn btn-outline-success" type="button" (click)='showV()'><a style="color: black;" routerLink="">   Home   </a> </button>
+        <button class="btn btn-outline-secondary" type="button" (click)='showData()'> <a style="color: black;" routerLink="live">   Live   </a></button>
+        <button class="btn btn-outline-secondary" type="button" (click)='showData()'> <a style="color: black;" routerLink="event">   Event   </a></button>
+        <button class="btn btn-outline-secondary" type="button" (click)='showData()'> <a style="color: black;" routerLink="signup">   SignUp   </a></button>
+        <button class="btn btn-outline-secondary" type="button" (click)='showData()'> <a style="color: black;" routerLink="ticket">   Ticket   </a></button>
+      </form>
+    </nav>
+     -->
+
+  <button type="button" class="btn btn-info" (click)='showV()'>
     <a style="color: black;" routerLink="">Home</a> 
   </button> | 
-  <button type="button" class="btn btn-lg btn-pill btn-danger" (click)='showData()'>
+  <button type="button" class="btn btn-danger" (click)='showData()'>
     <a style="color: black;" routerLink="live">Live</a> 
   </button>
-  |<button type="button" class="btn btn-lg btn-pill btn-warning" (click)='showData()'>
-    <nav>
-      <a style="color: black;" routerLink="event" >event</a>
-    </nav>
+  |<button type="button" class="btn btn-warning" (click)='showData()'>
+    <a style="color: black;" routerLink="event" >event</a>
     </button>|
-    <button type="button" class="btn btn-lg btn-pill btn-success" (click)='showData()'>
+    <button type="button" class="btn btn-success" (click)='showData()'>
       <a style="color: black;" routerLink="signup">SignUp</a> 
     </button>|
-    <button type="button" class="btn btn-lg btn-pill btn-warning" (click)='showData()'>
+    <button type="button" class="btn btn-warning" (click)='showData()'>
       <a style="color: black;" routerLink="ticket">Ticket</a> 
     </button>
+    
 
     <div *ngIf='home'>
          <router-outlet></router-outlet>
-</div>
+    </div>
 
 
-    
-
-    
-
-
-
-
-<div class="container py-3">
-  <div class="title h1 text-center">Start Your Journey Here...</div>
+<div *ngIf='detail'>
+ <div class="container py-3">
+  <div style="color: whitesmoke;" class="title h1 text-center">Start Your Journey Here...</div>
   <!-- Card Start -->
   <div class="card">
     <div class="row ">
@@ -164,6 +171,9 @@
 
 
 </div>
+
+</div>
+
 
 
 

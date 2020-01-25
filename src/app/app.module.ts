@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule,routingComponent } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -9,7 +9,7 @@ import { UpcomingComponent } from './event/upcoming/upcoming.component';
 import { OngoingComponent } from './event/ongoing/ongoing.component';
 import { PastComponent } from './event/past/past.component';
 import { MatchesComponent } from './matches/matches.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { AllMatchesComponent } from './matches/all-matches/all-matches.component';
 import { OngoingMatchesComponent } from './matches/ongoing-matches/ongoing-matches.component';
 import { UpcomingMatchesComponent } from './matches/upcoming-matches/upcoming-matches.component';
@@ -33,6 +33,8 @@ import { SignupComponent } from './signup/signup.component';
 import { OrgloginComponent } from './organization/orglogin/orglogin.component';
 import { OrgregisterComponent } from './organization/orgregister/orgregister.component';
 import { EventPageComponent } from './event/event-page/event-page.component';
+import { LogoutComponent } from './logout/logout.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -65,13 +67,17 @@ import { EventPageComponent } from './event/event-page/event-page.component';
        DotaComponent,
        CsGoComponent,
     TicketComponent,
-    SignupComponent
+    SignupComponent,
+    LogoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    HttpClientJsonpModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

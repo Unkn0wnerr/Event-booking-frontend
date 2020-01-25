@@ -13,14 +13,24 @@ export class OrgloginComponent implements OnInit {
   loggedIn:boolean;
   logindetails:organization=new organization();
   validOrg: organization=new organization();
-
-  constructor(private loginservice:UserService,private router:Router) { }
+  aa:any;
+  constructor(private loginservice:UserService,
+    private router:Router) { }
 
   ngOnInit() {
-    this.loginservice.currentLoginState.subscribe(result=>this.loggedIn=result);
+    this.loginservice.currentLoginState.subscribe((result)=>{
+      return this.loggedIn=result});
   }
 
-
+  orgLogin(){
+    this.aa=this.loginservice.authenticateorg({orgEmail:this.logindetails.orgEmail,
+    orgPassword:this.logindetails.orgPassword});
+    console.log(this.aa);
+    sessionStorage.setItem('orgEmail',"loggedIN");
+    this.loginservice.changecurrentLoginState(true);
+    this.router.navigate(["user"]);
+  }
+/*
   orgLogin(){
 
     this.loginservice.authenticateorg(this.logindetails).
@@ -34,9 +44,9 @@ export class OrgloginComponent implements OnInit {
 
     }
   
-  
+ 
    
    }
-
+ */
 
 }

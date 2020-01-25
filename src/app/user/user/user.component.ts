@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { user } from '../user';
+import { User } from '../user';
 import { UserService } from '../user.service';
 import { Observable } from 'rxjs';
 
@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 export class UserComponent implements OnInit {
 dataShow:boolean=true;
 all:boolean=true;
-userdetails:user=new user();//form data
+userdetails:User=new User();//form data
 
 g:any=[];//database data
   constructor(private usv:UserService) { }
