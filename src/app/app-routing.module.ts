@@ -28,10 +28,12 @@ import { OrgloginComponent } from './organization/orglogin/orglogin.component';
 import { OrgregisterComponent } from './organization/orgregister/orgregister.component';
 import { AuthGaurdService } from './auth-gaurd.service';
 import { LogoutComponent } from './logout/logout.component';
+import { AdminComponent } from './admin/admin.component';
 
 
 
 const routes: Routes = [
+  {path: 'signup/admin', component:AdminComponent},
   {path: 'event', component: EventComponent,canActivate:[AuthGaurdService]},
   {path: 'event/:gamename', component: AllComponent},
   {path: 'event/:gamename/ongoing', component: OngoingComponent},
@@ -72,7 +74,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponent = [AppComponent,  PageNotFoundComponent,
+export const routingComponent = [AppComponent,  PageNotFoundComponent,AdminComponent,
   EventComponent, AllComponent,OngoingComponent,PastComponent,UpcomingComponent,LogoutComponent,
   MatchesComponent,AllMatchesComponent,UpcomingMatchesComponent,OngoingMatchesComponent,PastMatchesComponent,
   EventPageComponent]

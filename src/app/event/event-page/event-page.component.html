@@ -25,19 +25,19 @@
 <br><br>
 
 
-<div class="card" style="width: 18rem;">
-  <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-
+<div class="card text-center">
+  <div class="card-header">
+    {{events.eventName}}
+  </div>
   <div class="card-body">
-    <h3 class="card-title">{{events.eventName}}</h3>
+    <h5 class="card-title">{{events.arena}}</h5>
+    <p class="card-text">{{events.startDate}}<b>-</b>{{events.endDate}}</p>
+    <p class="card-text">{{events.prizePool}}</p>
     
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{events.startDate}}<b>-</b>{{events.endDate}}</li>
-    <li class="list-group-item">{{events.arena}}</li>
-    <li class="list-group-item">{{events.prizePool}}</li>
-  </ul>
-
+  <div class="card-footer text-muted">
+    12 days to go
+  </div>
 </div>
 
 <br><br>

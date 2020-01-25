@@ -35,6 +35,8 @@ import { OrgregisterComponent } from './organization/orgregister/orgregister.com
 import { EventPageComponent } from './event/event-page/event-page.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HeaderComponent } from './header/header.component';
+import { AdminComponent } from './admin/admin.component';
+
 
 
 
@@ -69,7 +71,10 @@ import { HeaderComponent } from './header/header.component';
     TicketComponent,
     SignupComponent,
     LogoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminComponent,
+   
+    
   ],
   imports: [
     BrowserModule,
