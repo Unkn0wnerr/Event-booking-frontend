@@ -43,6 +43,11 @@ getUserById(aa:any):Observable<any>
   return this.http.get(this.baseUrl+"/"+aa);
 
 }
+getAllOrganization():Observable<any>
+{
+   return this.http.get(this.baseorgUrl+"/list");
+}
+
 getAllUser():Observable<any>
 {
   return this.http.get(this.baseUrl+"/list");
@@ -62,8 +67,7 @@ authenticateorg(value:any):Observable<any>
   return this.http.post(`${this.loginorgUrl}`,value).pipe(tap(org=>{
     this.data1=org as organization;
     sessionStorage.setItem('name',this.data1.orgName);
-    console.log(org);
-  }));
+    console.log(org);}));
 }
 
 changecurrentLoginState(state:boolean)
@@ -75,8 +79,6 @@ registerUser(user:User)
 {
   return this.http.post<any>(this.baseUrl+"/register",user);
 }
-
-
 
 registerOrg(organization: any)
 {

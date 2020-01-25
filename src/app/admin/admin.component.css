@@ -1,0 +1,84 @@
+.mat-form-field{
+    display: block;
+    margin-bottom: 0px;
+}
+#loginHeading{
+   font-family: sans-serif;
+    font-size: 1.2rem;
+    margin-top: 0;
+    word-break: break-all;
+    text-align: center;
+}
+.example-button-row a.mat-flat-button{
+    color: #007bff;
+}
+h2{
+    color: #2E86C1;  
+    margin-bottom: 15px;
+  }
+  #loginBox{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 360px;
+      text-align: center;
+      height:440px;
+      color: black;
+      box-sizing: border-box;
+      background: rgba(255,255,255,1);
+      padding-top: 70px ;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+    .heading {
+      width: 300px;
+      height: 45px;
+      color: white;
+      overflow :hidden;
+      position: absolute;
+      line-height: 40px;
+      top: calc(-50px/2);
+      box-shadow:-1px 5px 18px #888888;
+      background-color: #f0932b;
+      font-family: sans-serif;
+      left: calc(50% - 150px);
+    }
+    ::ng-deep mat-label,input{
+        color: black;
+        padding: 0%;
+       
+    }
+  
+    .logoimage{
+        width:62px;
+        height:66px;
+        border-radius:50%;
+        box-shadow:-1px 5px 18px #888888;
+    }
+  
+    #link1{
+      padding:0px;
+      float:left;
+      color: #2E86C1;
+    }
+  
+    #link2{
+      padding:0px;
+      float:right;
+      color: #2E86C1;
+    }
+  
+    .loginbtn1{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      color:white;
+      
+      text-align: center;
+      padding-right: 20px;
+      padding-left: 20px;
+      background-color: #f0932b;
+    }
+  
+    
