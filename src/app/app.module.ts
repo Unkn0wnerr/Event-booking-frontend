@@ -35,6 +35,10 @@ import { OrgregisterComponent } from './organization/orgregister/orgregister.com
 import { EventPageComponent } from './event/event-page/event-page.component';
 import { LogoutComponent } from './logout/logout.component';
 import { HeaderComponent } from './header/header.component';
+import { OrganizationComponent } from './organization/organization.component';
+import { AdminComponent } from './admin/admin.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { AuthService } from './admin/auth.service';
 
 
 
@@ -61,7 +65,7 @@ import { HeaderComponent } from './header/header.component';
     OrgloginComponent,
     OrgregisterComponent,
     EventPageComponent,
-    
+    OrganizationComponent,
 
     LiveComponent,
        DotaComponent,
@@ -69,7 +73,9 @@ import { HeaderComponent } from './header/header.component';
     TicketComponent,
     SignupComponent,
     LogoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    AdminComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -77,9 +83,10 @@ import { HeaderComponent } from './header/header.component';
     HttpClientModule,
     HttpClientJsonpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
-  providers: [UserService],
+  providers: [UserService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

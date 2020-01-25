@@ -28,7 +28,7 @@ export class OrgloginComponent implements OnInit {
     console.log(this.aa);
     sessionStorage.setItem('orgEmail',"loggedIN");
     this.loginservice.changecurrentLoginState(true);
-    this.router.navigate(["user"]);
+    this.router.navigate(["organization"]);
   }
 /*
   orgLogin(){

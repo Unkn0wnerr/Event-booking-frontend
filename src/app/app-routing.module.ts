@@ -28,11 +28,12 @@ import { OrgloginComponent } from './organization/orglogin/orglogin.component';
 import { OrgregisterComponent } from './organization/orgregister/orgregister.component';
 import { AuthGaurdService } from './auth-gaurd.service';
 import { LogoutComponent } from './logout/logout.component';
-
-
+import { OrganizationComponent } from './organization/organization.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
-  {path: 'event', component: EventComponent,canActivate:[AuthGaurdService]},
+  {path: 'organization',component:OrganizationComponent,canActivate:[AuthGaurdService]},
+  {path: 'event', component: EventComponent},
   {path: 'event/:gamename', component: AllComponent},
   {path: 'event/:gamename/ongoing', component: OngoingComponent},
   {path: 'event/:gamename/past', component: PastComponent},
@@ -43,10 +44,11 @@ const routes: Routes = [
   {path: 'matches/:gamename/upcoming', component: UpcomingMatchesComponent},
   {path: 'matches/:gamename/past', component: PastMatchesComponent},
   {path: 'event/eventpage/:id', component: EventPageComponent},
-{path:'logout',component:LogoutComponent,canActivate:[AuthGaurdService]},
-{path:'userlogin',component:UserloginComponent},
-{path:'user',component:UserComponent,canActivate:[AuthGaurdService]},
-{path:'signup',component:SignupComponent,
+  {path: 'logout',component:LogoutComponent,canActivate:[AuthGaurdService]},
+  {path: 'userlogin',component:UserloginComponent},
+  {path: 'user',component:UserComponent,canActivate:[AuthGaurdService]},
+  {path: 'admin',component:AdminComponent},
+  {path: 'signup',component:SignupComponent,
       children:[
         {path:'userlogin',component:UserloginComponent},
         {path:'orglogin',component:OrgloginComponent},

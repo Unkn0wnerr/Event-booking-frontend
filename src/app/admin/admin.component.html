@@ -1,0 +1,22 @@
+<div id="loginBox">
+    <h2 class="heading" >Admin Login</h2>
+
+    <form  id="loginForm" autocomplete="off" [formGroup]="logInForm" (ngSubmit)="onLogin()">
+        <div class="example-container">     
+              <mat-form-field appearance="outline" class="example-full-width">
+          
+                <input matInput [(ngModel)]="name" placeholder="Username" formControlName="username" required>
+                <mat-error *ngIf="logInForm.get('username').invalid">Please enter a valid username</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="example-full-width">
+          
+                <input matInput placeholder="Password" type="password" formControlName="password" required>
+                <mat-error *ngIf="logInForm.get('password').invalid">Please enter a valid password</mat-error>
+              </mat-form-field>
+              <div style="text-align:center;">
+                <button mat-button class="loginbtn1" >Login</button>
+              </div>
+        </div>
+    </form>
+  </div>
+

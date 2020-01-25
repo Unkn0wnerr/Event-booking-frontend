@@ -9,8 +9,25 @@ import { UserService } from '../user/user.service';
 export class HeaderComponent implements OnInit {
 
   constructor(private loginService:UserService) { }
-
-  ngOnInit() {
+  ngOnInit(): void {
+    this.detail=true;
   }
+  title = 'Event-booking-frontend';
+vdata:boolean=true;
+home:boolean=false;
+detail:boolean=true;
+
+
+  showV(){
+  this.vdata=true;
+ this.detail=!this.detail;
+  }
+  showData()
+  {
+    this.detail=false;
+    this.vdata=false;
+    this.home=!this.home;
+  }
+
 
 }

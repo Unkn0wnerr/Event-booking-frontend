@@ -6,6 +6,48 @@ body {
       margin-bottom: 50px;
       text-transform: uppercase;
   }
+  nav{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-family: "Open Sans";
+    background: linear-gradient(to right, #0066cc 0%, #33ccff 100%);
+  }
+  .navbar-nav{
+    margin-left: auto;
+  }
+  .navbar-nav a{
+    color: white;
+    font-size: large; 
+    font-family: "Open Sans";
+  }
+  .navbar-brand{
+    color: white; 
+    font-size: large;
+  }
+  ::ng-deep mat-tab-group{
+    width: 80%;
+    overflow-x: hidden;
+    left:50%;
+    transform: translate(-50%);
+    position: absolute;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    font-family: "Open Sans";
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);  
+  }
+  li{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    font-family: "Open Sans";
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2), 0 0 4px 0 rgba(0, 0, 0, 0.19);
+  }
+  li:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  #header{
+    background-color: #21A9ED;
+  }
   
   .card-block {
       font-size: 1em;
