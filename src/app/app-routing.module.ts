@@ -62,7 +62,7 @@ const routes: Routes = [
         {path:'orgregister',component:OrgregisterComponent},
                ]
 },
-{path:'app-root',component:AppComponent},
+
 {path:'ticket',component:TicketComponent},
 {path:'live',component:LiveComponent,
        children:[
@@ -95,6 +95,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponent = [AppComponent,  PageNotFoundComponent,
+export const routingComponent = [ PageNotFoundComponent,
   EventComponent, AllComponent,OngoingComponent,PastComponent,UpcomingComponent,
   MatchesComponent,AllMatchesComponent,UpcomingMatchesComponent,OngoingMatchesComponent,PastMatchesComponent,EventPageComponent]
