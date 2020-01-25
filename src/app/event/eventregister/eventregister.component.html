@@ -1,0 +1,50 @@
+<p>eventregister works!</p>
+
+<div style="background-color:black;" class="py-5">
+    <div  class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div style="background-color: cyan; opacity: inherit;" class="card rounded-0">
+          <div class="card-header">
+            <h3 class="mb-0">Event Register</h3>
+          </div>
+          <div style="background-color:lime;" class="card-body">
+            <form class="form">
+              <div class="form-group">
+                <label for="eventName">eventName</label>
+                <input type="text" [(ngModel)]="registerEventData.eventName" name="eventName" class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" [(ngModel)]="registerEventData.startDate" name="startDate" class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" [(ngModel)]="registerEventData.endDate" name="endDate" class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label for="arena">Arena</label>
+                <input type="text" [(ngModel)]="registerEventData.arena" name="arena" class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label for="gameName">Game Name</label>
+                <input type="text" [(ngModel)]="registerEventData.gameName" name="gameName" class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label for="prizePool">Prize Pool</label>
+                <input type="number" [(ngModel)]="registerEventData.prizePool" name="prizePool" class="form-control rounded-0" required>
+              </div>
+              <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+            </form>
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>

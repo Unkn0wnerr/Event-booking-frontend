@@ -39,6 +39,7 @@ import { OrganizationComponent } from './organization/organization.component';
 import { AdminComponent } from './admin/admin.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AuthService } from './admin/auth.service';
+import { EventregisterComponent } from './event/eventregister/eventregister.component';
 
 
 
@@ -75,6 +76,7 @@ import { AuthService } from './admin/auth.service';
     LogoutComponent,
     HeaderComponent,
     AdminComponent,
+    EventregisterComponent,
     
   ],
   imports: [
