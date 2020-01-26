@@ -44,7 +44,7 @@ isUserLoggedIn() {
  // return !(user === null)
 }
 isOrgLoggedIn(){
-  if (sessionStorage.getItem('organization')) {
+  if (sessionStorage.getItem('organization')||sessionStorage.getItem('admin')) {
     // logged in so return true
     return true;
   }
@@ -56,6 +56,7 @@ isOrgLoggedIn(){
 logOut() {
   sessionStorage.removeItem('organization');
   sessionStorage.removeItem('user');
+  sessionStorage.removeItem('admin');
 }
 
 deleteUserById(aa:any):Observable<any>
