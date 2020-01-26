@@ -7,6 +7,7 @@ import { tap } from 'rxjs/operators';
 import { Event } from '../event/event';
 import { Router,RouterStateSnapshot } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { Team } from '../team';
 
 
 
@@ -20,7 +21,7 @@ private baseUrl='http://localhost:7070/EventBooking/user';
 private loginorgUrl='http://localhost:7070/EventBooking/org/validate';
 private baseorgUrl='http://localhost:7070/EventBooking/org';
 private eventUrl='http://localhost:7070/EventBooking/event';
-
+private teamUrl='http://localhost:7070/EventBooking/team';
 
 private loggedIn= new BehaviorSubject<boolean>(false);
 currentLoginState=this.loggedIn.asObservable();
@@ -79,6 +80,11 @@ getAllOrganization():Observable<any>
 getAllUser():Observable<any>
 {
   return this.http.get(this.baseUrl+"/list");
+}
+
+getAllTeam():Observable<any>
+{
+  return this.http.get(this.teamUrl+"/list");
 }
 
 //data:User=new User();
@@ -146,6 +152,11 @@ registerEvent(event:Event)
 registerUser(user:User)
 {
   return this.http.post<any>(this.baseUrl+"/register",user);
+}
+
+registerTeam(team:Team)
+{
+   return this.http.post<any>(this.teamUrl+"/register",team);
 }
 
 registerOrg(organization: any)

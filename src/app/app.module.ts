@@ -41,6 +41,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { AuthService } from './admin/auth.service';
 import { EventregisterComponent } from './event/eventregister/eventregister.component';
 import { TeamComponent } from './team/team.component';
+import { TeamlistComponent } from './teamlist/teamlist.component';
+
 
 
 
@@ -79,6 +81,7 @@ import { TeamComponent } from './team/team.component';
     AdminComponent,
     EventregisterComponent,
     TeamComponent,
+    TeamlistComponent,
     
   ],
   imports: [

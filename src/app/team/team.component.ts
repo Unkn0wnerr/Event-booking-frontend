@@ -1,15 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from '../team';
+import { UserService } from '../user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-team',
+  selector: 'team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
 
-  constructor() { }
+  registerUserData:Team=new Team();
+
+  constructor(private userregisterService:UserService, private router:Router ) { }
 
   ngOnInit() {
+  }
+
+  registerUser() {
+    this.userregisterService.registerTeam(this.registerUserData)
+    .subscribe(
+      res => {
+       
+        this.router.navigate(['event'])
+      },
+      err => console.log(err)
+    )      
   }
 
 }

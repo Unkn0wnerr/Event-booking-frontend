@@ -1,0 +1,29 @@
+<p>teamlist works!</p>
+
+<button type="button" class="btn btn-outline-primary">
+    <nav>
+        <a routerLink="team" routerLinkActive="active">Team Register</a>
+    </nav>
+</button> 
+<router-outlet></router-outlet>
+<div  class="card-deck">
+    <div class="card bg-warning">
+        <div class="card-body text-center">
+          <div>
+            <button type="button" (click)='getAllList()' class="btn btn-outline-primary" > Team List  </button>
+           </div>
+        </div>
+      </div>
+</div>
+<p>Team Details show:</p>
+<div  *ngIf="dataShow">
+
+    <div *ngFor="let users of g">
+            
+        <ul style="color: cyan;"><li >{{users.teamName}}</li>
+        <li>{{users.country}}</li>
+</ul>
+       <br>
+
+    </div>
+</div>

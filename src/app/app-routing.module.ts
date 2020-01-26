@@ -31,10 +31,18 @@ import { LogoutComponent } from './logout/logout.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { AdminComponent } from './admin/admin.component';
 import { EventregisterComponent } from './event/eventregister/eventregister.component';
+import { TeamComponent } from './team/team.component';
+import { TeamlistComponent } from './teamlist/teamlist.component';
 
 const routes: Routes = [
+  {path:'teamlist',component:TeamlistComponent,canActivate:[AuthGaurdService],
+  children:[
+    {path:'team',component:TeamComponent,canActivate:[AuthGaurdService]},
+  ]},
+  {path:'team',component:TeamComponent,canActivate:[AuthGaurdService]},
   {path: 'organization',component:OrganizationComponent,canActivate:[AuthGaurdService]},
-  {path: 'event', component: EventComponent},
+  {path: 'event', component: EventComponent
+},
  
   {path: 'event/:gamename', component: AllComponent,
            children:[ {path:'eventregister',component:EventregisterComponent,canActivate:[AuthGaurdService]},]
@@ -58,7 +66,8 @@ children:[{path: 'organization',component:OrganizationComponent}]//,canActivate:
   
   {path: 'signup',component:SignupComponent,
       children:[
-        {path:'userlogin',component:UserloginComponent},
+        {path:'userlogin',component:UserloginComponent,
+      },
         {path:'orglogin',component:OrgloginComponent},
         {path:'register',component:RegisterComponent},
         {path:'orgregister',component:OrgregisterComponent},
