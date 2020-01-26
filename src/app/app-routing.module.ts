@@ -48,7 +48,7 @@ const routes: Routes = [
   {path: 'matches/:gamename/upcoming', component: UpcomingMatchesComponent},
   {path: 'matches/:gamename/past', component: PastMatchesComponent},
   {path: 'event/eventpage/:id', component: EventPageComponent,
-           children:[{path:'ticket',component:TicketComponent},]
+           children:[{path:'ticket',component:TicketComponent,canActivate:[AuthGaurdService]},]
               },
   {path: 'logout',component:LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'userlogin',component:UserloginComponent},

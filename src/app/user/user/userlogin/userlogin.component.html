@@ -1,52 +1,17 @@
-<!--<p>userlogin works!</p>
-
-
-
-
-<div *ngIf="!loggedIn" class="py-5">
-  <div  class="row">
-    <div class="col-md-6 mx-auto">
-      <span class="anchor" id="formLogin"></span>
-
-      form card login 
-      <div style="background-color: crimson;" class="card rounded-0">
-        <div class="card-header">
-          <h3 class="mb-0">User Login</h3>
-        </div>
-        <div style="border-color: violet;" class="card-body">
-          <form class="form">
-            <div class="form-group">
-              <label for="uname1">Username</label>
-              <input type="text" class="form-control rounded-0" [(ngModel)]="logindetails.userEmail" name="userEmail" required>
-            </div>
-            <div class="form-group">
-              <label>Password</label>
-              <input type="password" class="form-control rounded-0" [(ngModel)]="logindetails.password" name="password" required>
-            </div>
-            <button type="button" (click)="userLogin()" class="btn btn-success float-right">Login</button>
-          </form>
-        </div> -->
-        <!--/card-block-->
-      
-      <!-- /form card login -->
-
 
 
       <div class="col-md-6 col-md-offset-3">
-        <!--<div class="alert alert-info">
-            Username: test<br />
-            Password: test
-        </div>-->
-        <h2>Login</h2>
+        
+        <h2 style="color: chartreuse;">User Login</h2>
         <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !userEmail.valid }">
-                <label for="userEmail">Username</label>
-                <input type="text" class="form-control" name="userEmail" [(ngModel)]="model.userEmail" #userEmail="ngModel" required />
+                <label style="color: chartreuse;" for="userEmail">Username</label>
+                <input type="text" class="form-control" name="userEmail" [(ngModel)]="model.userEmail" placeholder="Email" #userEmail="ngModel" required />
                 <div *ngIf="f.submitted && !userEmail.valid" class="help-block">Username is required</div>
             </div>
             <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+                <label style="color: chartreuse;" for="password">Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="model.password" placeholder="Password" #password="ngModel" required />
                 <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
             </div>
             <div class="form-group">
