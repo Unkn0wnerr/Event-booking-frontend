@@ -52,6 +52,7 @@ export class UserloginComponent implements OnInit {
    // this.router.navigate(["user"]);    
       
    //}
+   
 
 
 
@@ -61,7 +62,7 @@ export class UserloginComponent implements OnInit {
     this.loginservice.authenticate(this.model.userEmail, this.model.password).pipe(first())
         .subscribe(
             data => {
-              sessionStorage.setItem('userEmail',data.userEmail);
+              //sessionStorage.setItem('userEmail',data.userEmail);
                 this.router.navigate([this.returnUrl]);
             },
             error => {

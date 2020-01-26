@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { organization } from '../organization';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/user/user.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'orglogin',
@@ -10,26 +11,31 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class OrgloginComponent implements OnInit {
 
-  loggedIn:boolean;
-  logindetails:organization=new organization();
-  validOrg: organization=new organization();
-  aa:any;
-  constructor(private loginservice:UserService,
-    private router:Router) { }
+  //loggedIn:boolean;
+  //logindetails:organization=new organization();
+  //validOrg: organization=new organization();
+  //aa:any;
+
+  model: any = {};
+  loading = false;
+  returnUrl: string;
+  error = '';
+
+
+  constructor(private loginservice:UserService,private router:Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loginservice.currentLoginState.subscribe((result)=>{
-      return this.loggedIn=result});
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  orgLogin(){
-    this.aa=this.loginservice.authenticateorg({orgEmail:this.logindetails.orgEmail,
-    orgPassword:this.logindetails.orgPassword});
-    console.log(this.aa);
-    sessionStorage.setItem('orgEmail',"org");
-    this.loginservice.changecurrentLoginState(true);
-    this.router.navigate(["organization"]);
-  }
+  //orgLogin(){
+  //  this.aa=this.loginservice.authenticateorg({orgEmail:this.logindetails.orgEmail,
+   // orgPassword:this.logindetails.orgPassword});
+   // console.log(this.aa);
+   // sessionStorage.setItem('orgEmail',"org");
+   // this.loginservice.changecurrentLoginState(true);
+   // this.router.navigate(["organization"]);
+ // }
 /*
   orgLogin(){
 
@@ -49,4 +55,17 @@ export class OrgloginComponent implements OnInit {
    }
  */
 
+login() {
+  this.loading = true;
+  this.loginservice.authenticateorg(this.model.orgEmail, this.model.orgPassword).pipe(first())
+      .subscribe(
+          data => {
+            //sessionStorage.setItem('userEmail',data.userEmail);
+              this.router.navigate([this.returnUrl]);
+          },
+          error => {
+              this.error = error;
+              this.loading = false;
+          });
+        }
 }
