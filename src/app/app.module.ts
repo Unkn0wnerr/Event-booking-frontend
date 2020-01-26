@@ -86,7 +86,8 @@ import { EventregisterComponent } from './event/eventregister/eventregister.comp
     HttpClientJsonpModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    
   ],
   providers: [UserService,AuthService],
   bootstrap: [AppComponent]
