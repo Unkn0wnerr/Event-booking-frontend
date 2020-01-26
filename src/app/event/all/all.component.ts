@@ -13,8 +13,6 @@ export class AllComponent implements OnInit {
   events:any=[];
   src:boolean=false;
   src2:boolean=false;
-  checkOrg:boolean;
-
   constructor(public rest:RestService, private route:ActivatedRoute, private router:Router) { }
 
 

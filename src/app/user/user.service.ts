@@ -32,20 +32,25 @@ constructor(private http:HttpClient,private router: Router ) { }
 isUserLoggedIn() {
 
 
-  if (localStorage.getItem('currentUser')) {
+  if (sessionStorage.getItem('userEmail')) {
     // logged in so return true
     return true;
   }
-  //this.router.navigate(['/signup/userlogin']);
   return false;
+  //this.router.navigate(['/signup/userlogin']);
 
  // let user = localStorage.getItem('currentUser');
   //console.log(!(user === null))
  // return !(user === null)
 }
 isOrgLoggedIn(){
-  let org = sessionStorage.getItem('orgEmail');
-  return !(org === null);
+  if (sessionStorage.getItem('orgEmail')) {
+    // logged in so return true
+    return true;
+  }
+   return false;
+ // let org = sessionStorage.getItem('orgEmail');
+ // return !(org === null);
 }
 
 logOut() {

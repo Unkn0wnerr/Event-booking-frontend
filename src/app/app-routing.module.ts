@@ -47,7 +47,9 @@ const routes: Routes = [
   {path: 'matches/:gamename/ongoing', component: OngoingMatchesComponent},
   {path: 'matches/:gamename/upcoming', component: UpcomingMatchesComponent},
   {path: 'matches/:gamename/past', component: PastMatchesComponent},
-  {path: 'event/eventpage/:id', component: EventPageComponent},
+  {path: 'event/eventpage/:id', component: EventPageComponent,
+           children:[{path:'ticket',component:TicketComponent},]
+              },
   {path: 'logout',component:LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'userlogin',component:UserloginComponent},
   {path: 'user',component:UserComponent,canActivate:[AuthGaurdService]},
@@ -62,7 +64,7 @@ const routes: Routes = [
                ]
 },
 
-{path:'ticket',component:TicketComponent},//,canActivate:[AuthGaurdService]},
+//,canActivate:[AuthGaurdService]},
 {path:'live',component:LiveComponent,
        children:[
                  {path:'dota',component:DotaComponent},
