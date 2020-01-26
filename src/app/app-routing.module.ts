@@ -62,7 +62,7 @@ const routes: Routes = [
                ]
 },
 
-{path:'ticket',component:TicketComponent},
+{path:'ticket',component:TicketComponent},//,canActivate:[AuthGaurdService]},
 {path:'live',component:LiveComponent,
        children:[
                  {path:'dota',component:DotaComponent},

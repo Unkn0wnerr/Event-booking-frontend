@@ -16,6 +16,18 @@ vdata:boolean=true;
 home:boolean=false;
 detail:boolean=true;
 
+changeuserState()
+{
+ return this.loginService.isUserLoggedIn();
+
+}
+changeorgState()
+{
+ return this.loginService.isOrgLoggedIn();
+
+}
+
+
 
   showV(){
   this.vdata=true;
