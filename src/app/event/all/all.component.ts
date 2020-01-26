@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router'
+import { User } from 'src/app/user/user';
 
 @Component({
   selector: 'app-all',
@@ -13,6 +14,7 @@ export class AllComponent implements OnInit {
   events:any=[];
   src:boolean=false;
   src2:boolean=false;
+  abc:any;
   constructor(public rest:RestService, private route:ActivatedRoute, private router:Router) { }
 
 
@@ -21,6 +23,7 @@ export class AllComponent implements OnInit {
     this.rest.getEventbyGame(this.route.snapshot.params['gamename']).subscribe((data: {}) => {
       console.log(data);
       this.events=data;
+      
     })
     this.getGameName();
     

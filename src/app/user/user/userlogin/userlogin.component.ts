@@ -62,8 +62,9 @@ export class UserloginComponent implements OnInit {
     this.loginservice.authenticate(this.model.userEmail, this.model.password).pipe(first())
         .subscribe(
             data => {
-              sessionStorage.setItem('userEmail',data.userEmail);
-                this.router.navigate([this.returnUrl]);
+                console.log(data);
+              //sessionStorage.setItem('user',data.nickName);
+                this.router.navigate(['event']);
             },
             error => {
                 this.error = error;

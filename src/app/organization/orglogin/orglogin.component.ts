@@ -60,8 +60,8 @@ login() {
   this.loginservice.authenticateorg(this.model.orgEmail, this.model.orgPassword).pipe(first())
       .subscribe(
           data => {
-            sessionStorage.setItem('orgEmail',data.orgEmail);
-              this.router.navigate([this.returnUrl]);
+            sessionStorage.setItem('organization',data.orgEmail);
+              this.router.navigate([this.returnUrl]||['user']);
           },
           error => {
               this.error = error;

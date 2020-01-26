@@ -32,7 +32,7 @@ constructor(private http:HttpClient,private router: Router ) { }
 isUserLoggedIn() {
 
 
-  if (sessionStorage.getItem('userEmail')) {
+  if (sessionStorage.getItem('user')) {
     // logged in so return true
     return true;
   }
@@ -44,7 +44,7 @@ isUserLoggedIn() {
  // return !(user === null)
 }
 isOrgLoggedIn(){
-  if (sessionStorage.getItem('orgEmail')) {
+  if (sessionStorage.getItem('organization')) {
     // logged in so return true
     return true;
   }
@@ -54,9 +54,15 @@ isOrgLoggedIn(){
 }
 
 logOut() {
-  sessionStorage.removeItem('orgEmail');
-  sessionStorage.removeItem('userEmail');
+  sessionStorage.removeItem('organization');
+  sessionStorage.removeItem('user');
 }
+
+deleteUserById(aa:any):Observable<any>
+{
+    return this.http.get(this.baseUrl+"/delete"+aa);
+}
+
 
 
 getUserById(aa:any):Observable<any>
@@ -93,6 +99,7 @@ authenticate(userEmail: string, password: string) {
               // store user details and jwt token in local storage to keep user logged in between page refreshes
               localStorage.setItem('currentUser', JSON.stringify(user));
           }
+          sessionStorage.setItem('user',user);
           console.log(user);
           return user;
       }));

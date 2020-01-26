@@ -1,18 +1,47 @@
-<p>user works!</p>
 
 
+<div  class="card-deck">
+    <div class="card bg-warning">
+        <div class="card-body text-center">
+          <div>
+            <button type="button" (click)='getAllList()' class="btn btn-outline-primary">
+                <nav>
+                    <a style="color: black;" routerLink="organization" routerLinkActive="active">All User Details</a>
+                </nav>
+                </button>
+           </div>
+        </div>
+      </div>
+    <div class="card bg-success">
+      <div class="card-body text-center">
+        <button type="button" (click)='getAllOrgList()' class="btn btn-outline-primary">
+            <nav>
+                <a style="color: black;" routerLink="organization" routerLinkActive="active">Organizor Details</a>
+            </nav>
+            </button>
+      </div>
+    </div>
+   
+  </div>
+
+<!--
+<button type="button" (click)='getAllOrgList()' class="btn btn-outline-primary">
+    <nav>
+        <a routerLink="organization" routerLinkActive="active">Organizor Details</a>
+    </nav>
+    </button>
 
 <div *ngIf="dataShow">
    <button (click)='getAllList()'>All User Details</button>
 
-</div>
+</div>-->
 
 
 <div *ngIf="dataShow">
       <label>User Id</label>
       <input [(ngModel)]="userdetails.userId" placeholder="userId">
-      <label>{{userdetails.userId}}</label>
-  <button class="button is-small btn-primary" (click)='getdetailsUser()'>User of userId {{userdetails.userId}}</button>
+    <!--  <label>{{userdetails.userId}}</label>-->
+  <button class="button is-small btn-primary" (click)='getdetailsUser()'>User of userId <!--{{userdetails.userId}}--></button>
 </div>
 
 <p>User Details show:</p>
@@ -21,7 +50,7 @@
 
    
     <div *ngFor="let users of g">
-      <table border="1px" > 
+      <table border="5px" style="color: lawngreen;" > 
         <tr><td><span>{{users.name}}</span> </td>
             <td><span>{{users.nickName}}</span></td>
                 <td><span>{{users.age}}</span></td>
@@ -31,16 +60,35 @@
                                 <td> <span>{{users.gender}}</span> </td>
                                     <td><span>{{users.birthDate}}</span></td>
                                         <td><span>{{users.userEmail}}</span></td>
-                                            <!--<td><a href="#">Remove</a>|</td>
-                                                <td> <a href="#">Edit</a ></td>-->
+                                            <td><a >Remove</a>|</td>
+                                                <td> <a href="#">Edit</a ></td>
 
-</tr>                                                </table> 
+</tr>       
+<tr></tr>                                         
+</table> 
         
         </div>
 
 </div>
 
 
+<div *ngIf="!orgShow">
+
+   
+    <div *ngFor="let users of o">
+      <table border="5px" style="color: lawngreen;" > 
+        <tr><td>organization Name</td><td><span>{{users.orgName}}</span> </td>
+            <td>organization Email</td><td><span>{{users.orgEmail}}</span></td>
+                 <td><a href="#">Remove</a>|</td>
+                   <td> <a href="#">Edit</a ></td>
+
+</tr>       
+<tr></tr>                                         
+</table> 
+        
+        </div>
+
+</div>
 
 
 

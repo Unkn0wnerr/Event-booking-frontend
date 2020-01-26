@@ -45,6 +45,9 @@
 <div *ngIf="src2">
     <img class="card-img-top" src="https://www.pngkey.com/png/detail/128-1280651_dota-2-png-logo-dota-2-logo-png.png" alt="Card image cap">
 </div>
+
+
+
 <div class="card-body">
       <h3 class="card-title">{{e.eventName}}</h3>
       <p class="card-text">{{e.startDate}} - {{e.endDate}}</p>
@@ -57,7 +60,6 @@
     <div class="card-body">
         <ul>
             <li (click)="onSelect(e)">
-                
                 <button type="button" class="btn btn-light">Show Event Page</button>
             </li>
         </ul>

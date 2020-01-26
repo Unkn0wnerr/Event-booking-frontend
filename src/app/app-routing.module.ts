@@ -52,7 +52,9 @@ const routes: Routes = [
               },
   {path: 'logout',component:LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'userlogin',component:UserloginComponent},
-  {path: 'user',component:UserComponent,canActivate:[AuthGaurdService]},
+  {path: 'user',component:UserComponent,
+children:[{path: 'organization',component:OrganizationComponent}]//,canActivate:[AuthGaurdService]},]
+},//,canActivate:[AuthGaurdService]
   
   {path: 'signup',component:SignupComponent,
       children:[
