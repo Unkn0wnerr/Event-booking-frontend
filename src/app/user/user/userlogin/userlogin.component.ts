@@ -17,22 +17,15 @@ export class UserloginComponent implements OnInit {
   userman:User=new User();
   aa:any;
 
-
-
   constructor(private loginservice:UserService,private router:Router) { }
 
   ngOnInit() {
     this.loginservice.currentLoginState.subscribe((result)=>{
       return this.loggedIn = result;
-    });
-   
+    });   
   }
 
-
-
   userLogin(){
-
-    
     this.aa=this.loginservice.authenticate({
       userEmail:this.logindetails.userEmail
       ,password:this.logindetails.password});
@@ -43,7 +36,7 @@ export class UserloginComponent implements OnInit {
     this.loginservice.changecurrentLoginState(true);
     this.router.navigate(["user"]);    
       
-    
-
    }
+
+   
 }
