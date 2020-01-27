@@ -18,6 +18,8 @@ export class TeamComponent implements OnInit {
   }
 
   registerUser() {
+    let data=sessionStorage.getItem('user');
+    console.log(data);
     this.userregisterService.registerTeam(this.registerUserData)
     .subscribe(
       res => {
