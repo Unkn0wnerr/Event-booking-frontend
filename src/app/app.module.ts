@@ -43,6 +43,7 @@ import { EventregisterComponent } from './event/eventregister/eventregister.comp
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

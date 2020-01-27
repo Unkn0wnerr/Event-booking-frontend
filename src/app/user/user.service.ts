@@ -100,7 +100,7 @@ authenticate(userEmail: string, password: string) {
               // store user details and jwt token in local storage to keep user logged in between page refreshes
               localStorage.setItem('currentUser', JSON.stringify(user));
           }
-          sessionStorage.setItem('user',user);
+          sessionStorage.setItem('user',JSON.stringify(user));
           console.log(user);
           return user;
       }));

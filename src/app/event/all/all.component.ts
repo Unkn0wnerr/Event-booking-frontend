@@ -30,7 +30,14 @@ export class AllComponent implements OnInit {
   }
 
   onSelect(event:any){
-    this.router.navigate(['/event/eventpage', event.eventId])
+
+    var eventdata;
+    eventdata=this.events.map(
+      (data)=>data.name
+    )
+    localStorage.setItem('event', JSON.stringify(this.events));
+
+    this.router.navigate(['/event/eventpage', event.eventId]);
 }
 
 

@@ -31,6 +31,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { OrganizationComponent } from './organization/organization.component';
 import { AdminComponent } from './admin/admin.component';
 import { EventregisterComponent } from './event/eventregister/eventregister.component';
+import { BookTicketComponent } from './ticket/book-ticket/book-ticket.component';
 
 const routes: Routes = [
   {path: 'organization',component:OrganizationComponent,canActivate:[AuthGaurdService]},
@@ -47,9 +48,10 @@ const routes: Routes = [
   {path: 'matches/:gamename/ongoing', component: OngoingMatchesComponent},
   {path: 'matches/:gamename/upcoming', component: UpcomingMatchesComponent},
   {path: 'matches/:gamename/past', component: PastMatchesComponent},
-  {path: 'event/eventpage/:id', component: EventPageComponent,
-           children:[{path:'ticket',component:TicketComponent},]
-              },
+  {path: 'event/eventpage/:id', component: EventPageComponent},
+  {path:'ticket',component:TicketComponent},
+  {path:'book',component: BookTicketComponent},
+          
   {path: 'logout',component:LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'userlogin',component:UserloginComponent},
   {path: 'user',component:UserComponent,
@@ -86,4 +88,4 @@ export class AppRoutingModule { }
 export const routingComponent = [AppComponent,  PageNotFoundComponent,AdminComponent,
   EventComponent, AllComponent,OngoingComponent,PastComponent,UpcomingComponent,LogoutComponent,
   MatchesComponent,AllMatchesComponent,UpcomingMatchesComponent,OngoingMatchesComponent,PastMatchesComponent,
-  EventPageComponent]
+  EventPageComponent,TicketComponent,BookTicketComponent]
