@@ -46,6 +46,7 @@ import { TeamlistComponent } from './teamlist/teamlist.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

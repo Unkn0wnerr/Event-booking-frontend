@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
   selector: 'ticket',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TicketComponent implements OnInit {
 
-  constructor() { }
+
+  user:any;
+  event:any;
+
+  constructor( private router:Router) { }
 
   ngOnInit() {
+
+    this.user=sessionStorage.getItem(JSON.parse('user'));
+    this.event=localStorage.getItem(JSON.parse('event'));
+    console.log(this.user);
+    console.log(this.event);
   }
+
+
+
+ 
+
+
+  onSelect(){
+    this.user=sessionStorage.getItem(JSON.parse('user'));
+    this.event=localStorage.getItem(JSON.parse('event'));
+
+    this.router.navigate(['/book']);
+}
 
 }
