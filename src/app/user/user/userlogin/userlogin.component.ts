@@ -64,7 +64,7 @@ export class UserloginComponent implements OnInit {
             data => {
                 console.log(data);
               //sessionStorage.setItem('user',data.nickName);
-                this.router.navigate(['event']);
+                this.router.navigate(['teamlist']);
             },
             error => {
                 this.error = error;

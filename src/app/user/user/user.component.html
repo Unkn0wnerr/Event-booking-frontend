@@ -18,76 +18,65 @@
             <nav>
                 <a style="color: black;" routerLink="organization" routerLinkActive="active">Organizor Details</a>
             </nav>
-            </button>
+        </button>
       </div>
     </div>
-   
-  </div>
-
-<!--
-<button type="button" (click)='getAllOrgList()' class="btn btn-outline-primary">
-    <nav>
-        <a routerLink="organization" routerLinkActive="active">Organizor Details</a>
-    </nav>
-    </button>
-
-<div *ngIf="dataShow">
-   <button (click)='getAllList()'>All User Details</button>
-
-</div>-->
-
-
-<div *ngIf="dataShow">
-      <label>User Id</label>
-      <input [(ngModel)]="userdetails.userId" placeholder="userId">
-    <!--  <label>{{userdetails.userId}}</label>-->
-  <button class="button is-small btn-primary" (click)='getdetailsUser()'>User of userId <!--{{userdetails.userId}}--></button>
 </div>
-
+<!--
+<div >
+      <label>User Id</label>
+      <input [(ngModel)]="userdetails.userId" placeholder="userId"> 
+  <button class="button is-small btn-primary" (click)='getdetailsUser()'>User of userId </button>
+</div>
+-->
 <p>User Details show:</p>
 
-<div *ngIf="!dataShow">
+<div  *ngIf="dataShow">
 
-   
     <div *ngFor="let users of g">
-      <table border="5px" style="color: lawngreen;" > 
-        <tr><td><span>{{users.name}}</span> </td>
-            <td><span>{{users.nickName}}</span></td>
-                <td><span>{{users.age}}</span></td>
-                    <td> <span>{{users.country}}</span></td>
-                        <td>  <span>{{users.age}}</span></td>
-                            <td> <span>{{users.role}}</span></td>
-                                <td> <span>{{users.gender}}</span> </td>
-                                    <td><span>{{users.birthDate}}</span></td>
-                                        <td><span>{{users.userEmail}}</span></td>
-                                            <td><a >Remove</a>|</td>
-                                                <td> <a href="#">Edit</a ></td>
-
-</tr>       
-<tr></tr>                                         
-</table> 
+      <!--<table border="5px" style="color: lawngreen;" > 
+       <tr><td><span>{{users.name}}</span> </td>
+         <td><span>{{users.nickName}}</span></td>
+         <td><span>{{users.age}}</span></td>
+         <td> <span>{{users.country}}</span></td>
+         <td> <span>{{users.role}}</span></td>
+         <td> <span>{{users.gender}}</span> </td>
+         <td><span>{{users.birthDate}}</span></td>
+         <td><span>{{users.userEmail}}</span></td>
+         <td><a href="#">Remove</a>|</td>
+         <td> <a href="#">Edit</a ></td>
+       </tr>                            
+       </table> -->
+       <ul class="list-group list-group-flush">
+           <li class="list-group-item">{{users.name}}</li> <li class="list-group-item">{{users.nickName}}</li> <li class="list-group-item">{{users.age}}</li><li class="list-group-item"> {{users.gender}}</li><li class="list-group-item"> {{users.country}}</li><li class="list-group-item"> {{users.userEmail}}</li><li class="list-group-item"> {{users.birthDate}}</li>
+           
+        </ul>
+        <br>
         
         </div>
 
-</div>
+</div >
 
 
-<div *ngIf="!orgShow">
 
-   
+<div *ngIf="orgShow">
     <div *ngFor="let users of o">
-      <table border="5px" style="color: lawngreen;" > 
+     <!-- <table border="5px" style="color: lawngreen;" > 
         <tr><td>organization Name</td><td><span>{{users.orgName}}</span> </td>
             <td>organization Email</td><td><span>{{users.orgEmail}}</span></td>
                  <td><a href="#">Remove</a>|</td>
-                   <td> <a href="#">Edit</a ></td>
-
-</tr>       
-<tr></tr>                                         
-</table> 
-        
-        </div>
-
+                   <td> <a href="#">Edit</a ></td></tr>
+                  </table> -->
+                 
+                
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{users.orgName}}</li>
+                  <li class="list-group-item">{{users.orgEmail}}</li>
+                  
+                </ul>
+             
+<br>
+    </div>
 </div>
 
 

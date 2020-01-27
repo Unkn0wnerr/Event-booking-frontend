@@ -1,0 +1,34 @@
+<p>team works!</p>
+
+<div style="background-color:black;" class="py-5">
+    <div  class="row">
+      <div class="col-md-6 mx-auto">
+        <span class="anchor" id="formLogin"></span>
+  
+        <!-- form card login -->
+        <div style="background-color: cyan; opacity: inherit;" class="card rounded-0">
+          <div class="card-header">
+            <h3 class="mb-0">Team Register</h3>
+          </div>
+          <div style="background-color:lime;" class="card-body">
+            <form class="form">
+              <div class="form-group">
+                <label for="teamname">Team Name</label>
+                <input type="text" [(ngModel)]="registerUserData.teamName" name="teamName" class="form-control rounded-0" required>
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" [(ngModel)]="registerUserData.country" name="country" class="form-control rounded-0" required>
+              </div>
+              <button type="button" (click)="registerUser()" class="btn btn-primary float-right">Register</button>
+            </form>
+          </div>
+          <!--/card-block-->
+        </div>
+        <!-- /form card login -->
+  
+      </div>
+  
+  
+    </div>
+  </div>

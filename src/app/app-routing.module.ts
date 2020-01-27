@@ -32,10 +32,18 @@ import { OrganizationComponent } from './organization/organization.component';
 import { AdminComponent } from './admin/admin.component';
 import { EventregisterComponent } from './event/eventregister/eventregister.component';
 import { BookTicketComponent } from './ticket/book-ticket/book-ticket.component';
+import { TeamComponent } from './team/team.component';
+import { TeamlistComponent } from './teamlist/teamlist.component';
 
 const routes: Routes = [
+  {path:'teamlist',component:TeamlistComponent,canActivate:[AuthGaurdService],
+  children:[
+    {path:'team',component:TeamComponent,canActivate:[AuthGaurdService]},
+  ]},
+  {path:'team',component:TeamComponent,canActivate:[AuthGaurdService]},
   {path: 'organization',component:OrganizationComponent,canActivate:[AuthGaurdService]},
-  {path: 'event', component: EventComponent},
+  {path: 'event', component: EventComponent
+},
  
   {path: 'event/:gamename', component: AllComponent,
            children:[ {path:'eventregister',component:EventregisterComponent,canActivate:[AuthGaurdService]},]
@@ -52,6 +60,9 @@ const routes: Routes = [
   {path:'ticket',component:TicketComponent},
   {path:'book',component: BookTicketComponent},
           
+  {path: 'event/eventpage/:id', component: EventPageComponent,
+           children:[{path:'ticket',component:TicketComponent,canActivate:[AuthGaurdService]},]
+              },
   {path: 'logout',component:LogoutComponent,canActivate:[AuthGaurdService]},
   {path: 'userlogin',component:UserloginComponent},
   {path: 'user',component:UserComponent,
@@ -60,7 +71,8 @@ children:[{path: 'organization',component:OrganizationComponent}]//,canActivate:
   
   {path: 'signup',component:SignupComponent,
       children:[
-        {path:'userlogin',component:UserloginComponent},
+        {path:'userlogin',component:UserloginComponent,
+      },
         {path:'orglogin',component:OrgloginComponent},
         {path:'register',component:RegisterComponent},
         {path:'orgregister',component:OrgregisterComponent},

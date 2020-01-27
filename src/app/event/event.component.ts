@@ -15,6 +15,8 @@ export class EventComponent implements OnInit {
   constructor(private router:Router) { }
 
   ngOnInit() {
+    let data=sessionStorage.getItem('user');
+    console.log(data);
   }
 
   onSelect(event:any){

@@ -11,30 +11,28 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-dataShow:boolean=true;
-all:boolean=true;
+dataShow:boolean=false;
+all:boolean=false;
+status:boolean=false;
 userdetails:User=new User();//form data
 
 g:any=[];//database data
+a:any=[];
   constructor(private usv:UserService, private route:ActivatedRoute) { }
 
- // aa:any=1;
-  ngOnInit():void {
-  
-   
+ngOnInit():void {
+     
   }
-status:boolean=false;
- 
 
 getdetailsUser():void{
  
   this.usv.getUserById(this.userdetails.userId).subscribe(data =>{
     this.g.push(data);
     console.log(this.g)
+    this.dataShow=!this.dataShow;
         });
+       
         
-        this.status=!this.dataShow;
-        this.dataShow=!this.dataShow;
   }
 
   getAllList():void{
@@ -42,9 +40,19 @@ getdetailsUser():void{
       this.g=data;
       console.log(this.g)
       this.dataShow=!this.dataShow;
-      this.status=!this.status;
+      
     });
   }
+
+  o:any;
+  orgShow:boolean=false;
+    getAllOrgList():void{
+      this.usv.getAllOrganization().subscribe((data:{})=>{
+        this.o=data;
+        console.log(this.o);
+        this.orgShow=!this.orgShow;
+      });
+    }
 /*
   userstr:string;
   deleteUser(user:any){
@@ -67,20 +75,6 @@ getdetailsUser():void{
 })*/
 
 
-
-
-  o:any;
-orgShow:boolean=false;
-  getAllOrgList():void{
-    this.usv.getAllOrganization().subscribe((data:{})=>{
-      this.o=data;
-      //sessionStorage.setItem('orgEmail',this.g.orgEmail);
-      console.log(this.o)
-      this.dataShow=!this.dataShow;
-     // this.status=!this.status;
-      this.orgShow=!this.orgShow;
-    });
-  }
 
 
 }

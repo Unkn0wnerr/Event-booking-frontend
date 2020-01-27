@@ -21,7 +21,7 @@ status:boolean;
   getAllList():void{
     this.usv.getAllOrganization().subscribe((data:{})=>{
       this.g=data;
-      //sessionStorage.setItem('orgEmail',this.g.orgEmail);
+     
       console.log(this.g)
       this.dataShow=!this.dataShow;
       this.status=!this.status;

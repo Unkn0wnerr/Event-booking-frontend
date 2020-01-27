@@ -7,6 +7,7 @@ import { tap } from 'rxjs/operators';
 import { Event } from '../event/event';
 import { Router,RouterStateSnapshot } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { Team } from '../team';
 
 
 
@@ -20,7 +21,7 @@ private baseUrl='http://localhost:7070/EventBooking/user';
 private loginorgUrl='http://localhost:7070/EventBooking/org/validate';
 private baseorgUrl='http://localhost:7070/EventBooking/org';
 private eventUrl='http://localhost:7070/EventBooking/event';
-
+private teamUrl='http://localhost:7070/EventBooking/team';
 
 private loggedIn= new BehaviorSubject<boolean>(false);
 currentLoginState=this.loggedIn.asObservable();
@@ -81,6 +82,11 @@ getAllUser():Observable<any>
   return this.http.get(this.baseUrl+"/list");
 }
 
+getAllTeam():Observable<any>
+{
+  return this.http.get(this.teamUrl+"/list");
+}
+
 //data:User=new User();
 //authenticate(value:any):Observable<any>
 //{
@@ -100,8 +106,8 @@ authenticate(userEmail: string, password: string) {
               // store user details and jwt token in local storage to keep user logged in between page refreshes
               localStorage.setItem('currentUser', JSON.stringify(user));
           }
-          sessionStorage.setItem('user',JSON.stringify(user));
-          console.log(user);
+          sessionStorage.setItem('user',user.userId);
+          //console.log(user);
           return user;
       }));
 }
@@ -127,6 +133,7 @@ authenticateorg(orgEmail: string, orgPassword: string) {
               // store user details and jwt token in local storage to keep user logged in between page refreshes
               localStorage.setItem('currentOrg', JSON.stringify(organization));
           }
+          sessionStorage.setItem('organization',JSON.stringify(user));
           console.log(user);
           return user;
       }));
@@ -145,6 +152,12 @@ registerEvent(event:Event)
 registerUser(user:User)
 {
   return this.http.post<any>(this.baseUrl+"/register",user);
+}
+
+registerTeam(team:Team){
+  
+  
+   return this.http.post<any>(this.teamUrl+"/register",team);
 }
 
 registerOrg(organization: any)
