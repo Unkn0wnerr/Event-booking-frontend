@@ -23,4 +23,9 @@ export class EventComponent implements OnInit {
       this.router.navigate(['/event', event.name])
   }
 
+  functionlist()
+  {
+        this.router.navigate(['teamlist']);
+  }
+
 }

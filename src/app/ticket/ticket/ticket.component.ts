@@ -40,8 +40,8 @@ export class TicketComponent implements OnInit {
     this.ticket.seatNo=10;
     this.ticket.ticketPrize=500;
     this.ticket.ticketStatus=true;
-    this.ticket.event_id=this.event.eventId;
-    this.ticket.user_id=this.user.userId;
+    this.ticket.event_Id=this.event.eventId;
+    this.ticket.user_Id=this.user.userId;
     
     this.bookticket.bookTicket(this.ticket).subscribe(
       res=> {

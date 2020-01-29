@@ -25,7 +25,7 @@ export class OrgloginComponent implements OnInit {
   constructor(private loginservice:UserService,private router:Router,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'event';
   }
 
   //orgLogin(){

@@ -52,7 +52,7 @@ export class RestService {
   bookTicket(ticket:Ticket)
 {
   
-  return this.http.post<any>(endpoint + '/ticket/book',ticket);
+  return this.http.post<any>(endpoint + 'ticket/book',ticket);
 }
 
  
