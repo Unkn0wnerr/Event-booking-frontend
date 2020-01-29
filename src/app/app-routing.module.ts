@@ -42,7 +42,8 @@ const routes: Routes = [
   ]},
   {path:'team',component:TeamComponent,canActivate:[AuthGaurdService]},
   {path: 'organization',component:OrganizationComponent,canActivate:[AuthGaurdService]},
-  {path: 'event', component: EventComponent
+  {path: 'event', component: EventComponent,
+      children:[{path:'teamlist',component:TeamlistComponent,canActivate:[AuthGaurdService]},]
 },
  
   {path: 'event/:gamename', component: AllComponent,
