@@ -49,10 +49,10 @@ export class RestService {
     return this.http.get(endpoint + 'event/eventpage/' + id).pipe(map(this.extractData));
   }
 
-  bookTicket(ticket:Ticket,user:User,event:Event)
+  bookTicket(ticket:Ticket)
 {
   
-  return this.http.post<any>(endpoint + '/ticket/book',[ticket,user,event]);
+  return this.http.post<any>(endpoint + '/ticket/book',ticket);
 }
 
  

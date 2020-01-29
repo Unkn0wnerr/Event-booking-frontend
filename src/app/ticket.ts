@@ -6,5 +6,7 @@ export class Ticket
    seatNo:any;
    ticketPrize:any;
    ticketStatus:any;
+   event_id:any;
+   user_id:any;
    
 }
