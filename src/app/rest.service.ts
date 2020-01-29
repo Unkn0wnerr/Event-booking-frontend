@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
+import { Ticket } from './ticket';
+import { User } from './user/user';
 
 
 const endpoint = 'http://localhost:7070/EventBooking/';
@@ -46,6 +48,12 @@ export class RestService {
   getEventDetails(id):Observable<any>{
     return this.http.get(endpoint + 'event/eventpage/' + id).pipe(map(this.extractData));
   }
+
+  bookTicket(ticket:Ticket,user:User,event:Event)
+{
+  
+  return this.http.post<any>(endpoint + '/ticket/book',[ticket,user,event]);
+}
 
  
 

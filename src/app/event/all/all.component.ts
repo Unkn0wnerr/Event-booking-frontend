@@ -35,7 +35,7 @@ export class AllComponent implements OnInit {
     eventdata=this.events.map(
       (data)=>data.name
     )
-    localStorage.setItem('event', JSON.stringify(this.events));
+    localStorage.setItem('event', JSON.stringify(event));
 
     this.router.navigate(['/event/eventpage', event.eventId]);
 }
