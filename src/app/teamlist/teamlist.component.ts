@@ -23,4 +23,13 @@ dataShow:boolean=false;
     });
   }
 
+
+  onSelect(teams:any){
+    console.log(teams.teamId);
+    let id=sessionStorage.getItem('user');
+    console.log(id)
+    this.usv.updateId( id,teams.teamId);
+}
+
+
 }

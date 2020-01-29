@@ -18,12 +18,22 @@
 <p>Team Details show:</p>
 <div  *ngIf="dataShow">
 
-    <div *ngFor="let users of g">
-            
-        <ul style="color: cyan;"><li >{{users.teamName}}</li>
-        <li>{{users.country}}</li>
-</ul>
+    <div *ngFor="let teams of g">
+        <div class="card" style="width: 18rem;">       
+             <ul style="color: cyan;">
+                 <li >{{teams.teamName}}</li>
+                 <li>{{teams.country}}</li>
+             </ul>
+         <div class="card-body">
+             <ul>
+                <li (click)="onSelect(teams)">
+                <button type="button" class="btn btn-light">JOIN TEAM</button>
+               </li>
+             </ul>
+         </div>
+        </div>  
        <br>
 
     </div>
 </div>
+

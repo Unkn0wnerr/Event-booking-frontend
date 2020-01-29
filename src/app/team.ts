@@ -1,6 +1,6 @@
 export class Team
 {
-    teamId:String;
+    teamId:number;
     country:String;
     teamName:String;
 }

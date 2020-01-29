@@ -165,6 +165,14 @@ registerOrg(organization: any)
   return this.http.post<any>(this.baseorgUrl+"/register",organization);
 }
 
+updateId(userId:any,teamId:any):Observable<any>
+{
 
+  console.log(userId+"--"+teamId)
+  let url = this.baseUrl+"/updateTeam/"+userId+"/"+teamId
+  console.log(url)
+  return this.http.get(url);
+
+}
 
 }
